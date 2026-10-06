@@ -11,7 +11,7 @@ function Header() {
         <Link className="brand" to="/">
           <BrandIcon />
           <span className="brand-text">
-            Navegar com Cuidado
+            Verdade para Todos
             <small>Letramento digital para idosos</small>
           </span>
         </Link>

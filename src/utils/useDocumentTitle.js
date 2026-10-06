@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SUFFIX = "Navegar com Cuidado";
+const SUFFIX = "Verdade para Todos";
 
 export default function useDocumentTitle(title) {
   useEffect(() => {
