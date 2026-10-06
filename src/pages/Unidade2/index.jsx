@@ -20,7 +20,10 @@ function Unidade2() {
         />
       }
     >
-      <Hero kicker="Unidade 2 de 3" title="Os tipos de notícia falsa" />
+      <Hero
+        kicker="Unidade 2 · Página 1 de 1"
+        title="Os tipos de notícia falsa"
+      />
 
       <SectionCard title="Nem toda informação errada é igual">
         <p>É útil conhecer as formas mais comuns que uma notícia falsa pode assumir:</p>

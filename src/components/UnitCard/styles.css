@@ -42,19 +42,6 @@
   font-weight: 700;
   font-size: var(--fs-lg);
 }
-.unit-card .unit-icon {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.unit-card .unit-icon svg {
-  width: 56px;
-  height: 56px;
-}
 .unit-card .unit-text h2 {
   font-size: var(--fs-lg);
   margin-bottom: 4px;

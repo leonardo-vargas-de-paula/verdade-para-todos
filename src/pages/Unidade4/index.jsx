@@ -6,10 +6,8 @@ import IconList from "../../components/IconList";
 import UnitNav from "../../components/UnitNav";
 import useDocumentTitle from "../../utils/useDocumentTitle";
 
-function Unidade3Pagina3() {
-  useDocumentTitle(
-    "Unidade 3 · Página 3 — Como conferir antes de acreditar"
-  );
+function Unidade4() {
+  useDocumentTitle("Unidade 4 — Como conferir antes de acreditar");
 
   return (
     <Layout
@@ -17,12 +15,12 @@ function Unidade3Pagina3() {
         <BackBar
           backTo="/"
           backLabel="Voltar ao Módulo 1"
-          trail={["Início", "Módulo 1", "Unidade 3", "Página 3"]}
+          trail={["Início", "Módulo 1", "Unidade 4"]}
         />
       }
     >
       <Hero
-        kicker="Unidade 3 · Página 3 de 3"
+        kicker="Unidade 4 · Página 1 de 1"
         title="Como conferir antes de acreditar"
       />
 
@@ -44,7 +42,7 @@ function Unidade3Pagina3() {
       <UnitNav
         prev={{
           to: "/unidade/3/2",
-          label: "◂ Página anterior",
+          label: "◂ Unidade anterior",
           title: "Como as Fake News são construídas",
         }}
         next={{
@@ -57,4 +55,4 @@ function Unidade3Pagina3() {
   );
 }
 
-export default Unidade3Pagina3;
+export default Unidade4;

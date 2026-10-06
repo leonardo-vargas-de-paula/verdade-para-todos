@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { FontSizeProvider } from "./contexts/FontSizeContext";
 import { playClickSound, isMobileViewport } from "./utils/buttonSound";
 import ModuleHome from "./pages/ModuleHome";
@@ -7,7 +7,7 @@ import Unidade1 from "./pages/Unidade1";
 import Unidade2 from "./pages/Unidade2";
 import Unidade3Pagina1 from "./pages/Unidade3Pagina1";
 import Unidade3Pagina2 from "./pages/Unidade3Pagina2";
-import Unidade3Pagina3 from "./pages/Unidade3Pagina3";
+import Unidade4 from "./pages/Unidade4";
 
 /* Ao mudar de página, volta ao topo — como acontecia com a troca
    de arquivos HTML no protótipo. */
@@ -51,7 +51,11 @@ function App() {
           <Route path="/unidade/2" element={<Unidade2 />} />
           <Route path="/unidade/3" element={<Unidade3Pagina1 />} />
           <Route path="/unidade/3/2" element={<Unidade3Pagina2 />} />
-          <Route path="/unidade/3/3" element={<Unidade3Pagina3 />} />
+          <Route path="/unidade/4" element={<Unidade4 />} />
+          <Route
+            path="/unidade/3/3"
+            element={<Navigate to="/unidade/4" replace />}
+          />
           <Route path="*" element={<ModuleHome />} />
         </Routes>
       </BrowserRouter>

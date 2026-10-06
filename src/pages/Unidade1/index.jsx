@@ -19,7 +19,7 @@ function Unidade1() {
         />
       }
     >
-      <Hero kicker="Unidade 1 de 3" title="O que é Fake News?" />
+      <Hero kicker="Unidade 1 · Página 1 de 1" title="O que é Fake News?" />
 
       <SectionCard title="Definição">
         <p>

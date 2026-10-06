@@ -22,7 +22,7 @@ function Unidade3Pagina2() {
       }
     >
       <Hero
-        kicker="Unidade 3 · Página 2 de 3"
+        kicker="Unidade 3 · Página 2 de 2"
         title="Como as Fake News são construídas (parte 2)"
       />
 
@@ -48,8 +48,8 @@ function Unidade3Pagina2() {
           title: "Como as Fake News são construídas",
         }}
         next={{
-          to: "/unidade/3/3",
-          label: "Próxima página ▸",
+          to: "/unidade/4",
+          label: "Próxima unidade ▸",
           title: "Como conferir antes de acreditar",
         }}
       />

@@ -20,7 +20,7 @@ function Unidade3Pagina1() {
       }
     >
       <Hero
-        kicker="Unidade 3 · Página 1 de 3"
+        kicker="Unidade 3 · Página 1 de 2"
         title="Como as Fake News são construídas"
       />
 
