@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 import { FontSizeProvider } from "./contexts/FontSizeContext";
 import { playClickSound, isMobileViewport } from "./utils/buttonSound";
 import ModuleHome from "./pages/ModuleHome";
-import Unidade1 from "./pages/Unidade1";
-import Unidade2 from "./pages/Unidade2";
-import Unidade3Pagina1 from "./pages/Unidade3Pagina1";
-import Unidade3Pagina2 from "./pages/Unidade3Pagina2";
-import Unidade4 from "./pages/Unidade4";
+import Unidade1 from "./pages/Unidade1/Pagina1";
+import Unidade2 from "./pages/Unidade2/Pagina1";
+import Unidade3Pagina1 from "./pages/Unidade3/Pagina1";
+import Unidade3Pagina2 from "./pages/Unidade3/Pagina2";
+import Unidade4 from "./pages/Unidade4/Pagina1";
 
 /* Ao mudar de página, volta ao topo — como acontecia com a troca
    de arquivos HTML no protótipo. */

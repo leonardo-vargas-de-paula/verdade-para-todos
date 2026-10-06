@@ -1,13 +1,13 @@
-import Layout from "../../components/Layout";
-import BackBar from "../../components/BackBar";
-import Hero from "../../components/Hero";
-import SectionCard from "../../components/SectionCard";
-import IconList from "../../components/IconList";
-import Callout from "../../components/Callout";
-import UnitNav from "../../components/UnitNav";
-import useDocumentTitle from "../../utils/useDocumentTitle";
+import Layout from "../../../components/Layout";
+import BackBar from "../../../components/BackBar";
+import Hero from "../../../components/Hero";
+import SectionCard from "../../../components/SectionCard";
+import IconList from "../../../components/IconList";
+import Callout from "../../../components/Callout";
+import UnitNav from "../../../components/UnitNav";
+import useDocumentTitle from "../../../utils/useDocumentTitle";
 
-function Unidade2() {
+function Pagina1() {
   useDocumentTitle("Unidade 2 — Os tipos de notícia falsa");
 
   return (
@@ -66,4 +66,4 @@ function Unidade2() {
   );
 }
 
-export default Unidade2;
+export default Pagina1;

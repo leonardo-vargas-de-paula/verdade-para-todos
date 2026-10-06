@@ -1,12 +1,12 @@
-import Layout from "../../components/Layout";
-import BackBar from "../../components/BackBar";
-import Hero from "../../components/Hero";
-import SectionCard from "../../components/SectionCard";
-import IconList from "../../components/IconList";
-import UnitNav from "../../components/UnitNav";
-import useDocumentTitle from "../../utils/useDocumentTitle";
+import Layout from "../../../components/Layout";
+import BackBar from "../../../components/BackBar";
+import Hero from "../../../components/Hero";
+import SectionCard from "../../../components/SectionCard";
+import IconList from "../../../components/IconList";
+import UnitNav from "../../../components/UnitNav";
+import useDocumentTitle from "../../../utils/useDocumentTitle";
 
-function Unidade3Pagina1() {
+function Pagina1() {
   useDocumentTitle("Unidade 3 — Como as Fake News são construídas");
 
   return (
@@ -55,4 +55,4 @@ function Unidade3Pagina1() {
   );
 }
 
-export default Unidade3Pagina1;
+export default Pagina1;
