@@ -1,0 +1,50 @@
+/* =========================================================================
+   NAVEGAR COM CUIDADO — Tokens de design
+   Contraste alto, cores usadas com moderação, azul reservado só para links.
+   ========================================================================= */
+:root {
+  /* cores base */
+  --color-bg: #fbf6ec; /* fundo bege claro, reduz o brilho do branco puro */
+  --color-bg-alt: #f2e9d4; /* fundo alternativo para seções/cards */
+  --color-bg-header: #ffffff;
+  --color-text: #0c0c0c; /* quase-preto, alto contraste sobre o bege (>12:1) */
+  --color-text-muted: #0c0c0c;
+  --color-border: #d9c9a0;
+
+  /* cor de marca — usada com moderação, nunca em texto corrido */
+  --color-primary: #0b5e67; /* teal profundo — "investigação" */
+  --color-primary-dark: #073f45;
+  --color-accent: #b9501e; /* terracota — chamadas de ação */
+  --color-accent-dark: #8f3c15;
+
+  /* links — azul é reservado SOMENTE para links, nunca decoração */
+  --color-link: #1758a6;
+  --color-link-visited: #7a5a22; /* marrom âmbar, fácil de distinguir do azul */
+
+  /* estados — sempre acompanhados de ícone + texto, nunca só cor */
+  --color-success: #245c36;
+  --color-success-bg: #e4efe2;
+  --color-danger: #9c2b23;
+  --color-danger-bg: #f5e4df;
+
+  --color-focus: #b9501e;
+
+  /* tipografia */
+  --font-display: "Lexend", "Segoe UI", Arial, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+
+  /* escala de fonte controlável pelo usuário (botões A- / A / A+) */
+  --user-scale: 1;
+  --fs-base: calc(19px * var(--user-scale));
+  --fs-sm: calc(16px * var(--user-scale));
+  --fs-lg: calc(23px * var(--user-scale));
+  --fs-xl: calc(30px * var(--user-scale));
+  --fs-xxl: calc(40px * var(--user-scale));
+
+  /* alvos de toque grandes o suficiente para mãos com tremor */
+  --tap-min: 64px;
+  --tap-gap: 44px;
+
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(34, 48, 58, 0.1);
+}

@@ -1,0 +1,53 @@
+.back-bar {
+  background: var(--color-bg-alt);
+  border-bottom: 2px solid var(--color-border);
+}
+.back-bar .container {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--tap-min);
+  padding: 0 22px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-back:visited {
+  color: var(--color-primary-dark);
+}
+.btn-back:hover {
+  background: var(--color-bg-alt);
+}
+.btn-back svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* trilha (breadcrumb) — mostra onde o usuário está, sem precisar lembrar */
+.trail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+.trail .current {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}

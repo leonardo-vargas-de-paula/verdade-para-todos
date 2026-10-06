@@ -1,0 +1,19 @@
+.section-card {
+  background: #fff;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: var(--tap-gap);
+  box-shadow: var(--shadow);
+}
+.section-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-card h2 .icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}

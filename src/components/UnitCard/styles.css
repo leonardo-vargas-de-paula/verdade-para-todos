@@ -1,0 +1,82 @@
+.unit-list {
+  list-style: none;
+  margin: 28px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tap-gap);
+}
+
+.unit-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: #fff;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-decoration: none;
+  color: var(--color-text);
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  min-height: 96px;
+}
+.unit-card:visited {
+  color: var(--color-text);
+}
+.unit-card:hover {
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+}
+.unit-card .unit-number {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+}
+.unit-card .unit-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.unit-card .unit-icon svg {
+  width: 56px;
+  height: 56px;
+}
+.unit-card .unit-text h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: 4px;
+}
+.unit-card .unit-text p {
+  margin: 0;
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+}
+.unit-card .go-arrow {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  color: var(--color-accent);
+}
+
+@media (max-width: 640px) {
+  .unit-card {
+    flex-wrap: wrap;
+  }
+  .unit-card .go-arrow {
+    display: none;
+  }
+}
