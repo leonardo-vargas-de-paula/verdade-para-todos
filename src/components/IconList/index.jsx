@@ -1,7 +1,5 @@
 import "./styles.css";
 
-/* Lista de rótulos: título forte + texto explicativo ao lado.
-   Itens: [{ title, text }] */
 function IconList({ items }) {
   return (
     <ul className="icon-list">
@@ -10,6 +8,7 @@ function IconList({ items }) {
           <span>
             <strong>{item.title}</strong>
             <p>{item.text}</p>
+            {item.content}
           </span>
         </li>
       ))}
