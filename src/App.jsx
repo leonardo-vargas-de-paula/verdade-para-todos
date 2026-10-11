@@ -8,6 +8,8 @@ import Unidade2 from "./pages/Unidade2/Pagina1";
 import Unidade3Pagina1 from "./pages/Unidade3/Pagina1";
 import Unidade3Pagina2 from "./pages/Unidade3/Pagina2";
 import Unidade4 from "./pages/Unidade4/Pagina1";
+import Unidade4Pagina2 from "./pages/Unidade4/Pagina2";
+import Unidade4Pagina3 from "./pages/Unidade4/Pagina3";
 
 /* Ao mudar de página, volta ao topo — como acontecia com a troca
    de arquivos HTML no protótipo. */
@@ -52,6 +54,8 @@ function App() {
           <Route path="/unidade/3" element={<Unidade3Pagina1 />} />
           <Route path="/unidade/3/2" element={<Unidade3Pagina2 />} />
           <Route path="/unidade/4" element={<Unidade4 />} />
+          <Route path="/unidade/4/2" element={<Unidade4Pagina2 />} />
+          <Route path="/unidade/4/3" element={<Unidade4Pagina3 />} />
           <Route
             path="/unidade/3/3"
             element={<Navigate to="/unidade/4" replace />}
