@@ -8,7 +8,7 @@ import UnitNav from "../../../components/UnitNav";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
 
 function Pagina1() {
-  useDocumentTitle("Unidade 2 — Os tipos de notícia falsa");
+  useDocumentTitle("Unidade 2 — Os tipos de desinformação");
 
   return (
     <Layout
@@ -22,7 +22,7 @@ function Pagina1() {
     >
       <Hero
         kicker="Unidade 2 · Página 1 de 1"
-        title="Os tipos de notícia falsa"
+        title="Os tipos de desinformação"
       />
 
       <SectionCard title="Nem toda informação errada é igual">
@@ -46,7 +46,7 @@ function Pagina1() {
       </SectionCard>
 
       <Callout variant="danger" title="Por que isso importa para você">
-        Nem toda fake news é uma tentativa de enganar, mas todas podem levar a
+        Nem toda informação errada compartilhada é uma tentativa de enganar, mas todas podem levar a
         decisões danosas.
       </Callout>
 

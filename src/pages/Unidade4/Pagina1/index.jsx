@@ -15,12 +15,12 @@ function Pagina1() {
         <BackBar
           backTo="/"
           backLabel="Voltar ao Módulo 1"
-          trail={["Início", "Módulo 1", "Unidade 4"]}
+          trail={["Início", "Módulo 1", "Unidade 4", "Página 1"]}
         />
       }
     >
       <Hero
-        kicker="Unidade 4 · Página 1 de 1"
+        kicker="Unidade 4 · Página 1 de 3"
         title="Como conferir antes de acreditar"
       />
 
@@ -46,9 +46,9 @@ function Pagina1() {
           title: "Como as Fake News são construídas",
         }}
         next={{
-          to: "/",
-          label: "Fim do módulo ▸",
-          title: "Voltar ao Módulo 1",
+          to: "/unidade/4/2",
+          label: "Próxima página ▸",
+          title: "Continuação",
         }}
       />
     </Layout>

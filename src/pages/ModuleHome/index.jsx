@@ -34,7 +34,7 @@ function ModuleHome() {
         />
         <UnitCard
           number="2"
-          title="Unidade 2 — Os tipos de notícia falsa"
+          title="Unidade 2 — Os tipos de desinformação"
           to="/unidade/2"
         />
         <UnitCard
