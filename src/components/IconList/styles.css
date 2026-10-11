@@ -30,3 +30,36 @@
   margin: 0;
   color: var(--color-text-muted);
 }
+
+/* lista de exemplos dentro de um item — marcadores em teal.
+   list-style: disc porque o list-style: none do .icon-list é herdado. */
+.icon-list .examples-list {
+  list-style: disc;
+  margin: 10px 0 0 0;
+  padding-left: 28px;
+  color: var(--color-text-muted);
+}
+.icon-list .examples-list li {
+  display: list-item; /* reativa o marcador (display: flex do pai suprime) */
+  margin-bottom: 6px;
+}
+.icon-list .examples-list li::marker {
+  color: var(--color-primary);
+}
+
+/* espaço entre a imagem extra e o texto que vem depois dela */
+.icon-list .card-image + p {
+  margin-top: 12px;
+}
+
+/* URL destacada como "chip" — chamada sem negrito, para não
+   competir com o título do item */
+.icon-list .url-chip {
+  font-family: var(--font-body);
+  background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2px 8px;
+  color: var(--color-primary-dark);
+  overflow-wrap: anywhere; /* quebra a URL se a tela for estreita */
+}
