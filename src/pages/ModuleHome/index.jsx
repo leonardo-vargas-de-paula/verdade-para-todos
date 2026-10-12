@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout";
+import BackBar from "../../components/BackBar";
 import Hero from "../../components/Hero";
 import UnitCard from "../../components/UnitCard";
 import { SearchIcon } from "../../components/icons";
@@ -10,7 +11,15 @@ function ModuleHome() {
   useDocumentTitle("Módulo 1 — O que são Fake News");
 
   return (
-    <Layout>
+    <Layout
+      backBar={
+        <BackBar
+          backTo="/modulos"
+          backLabel="Voltar aos módulos"
+          trail={["Início", "Módulo 1"]}
+        />
+      }
+    >
       <Hero
         kicker={
           <>

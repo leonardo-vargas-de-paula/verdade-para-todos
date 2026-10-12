@@ -2,6 +2,8 @@
    Guarda a lista de rotas já visitadas — hoje só gravamos;
    o uso visual (selos, etc.) pode consumir lerVisitados() depois. */
 
+import { UNIDADES_MODULO1 } from "../data/modulos";
+
 const CHAVE = "vpt:visitados";
 
 export function lerVisitados() {
@@ -46,4 +48,11 @@ export function primeiraPaginaNaoLida(paginas, paginaAtual = null) {
   return paginas
     .filter((pagina) => pagina !== paginaAtual)
     .find((pagina) => !visitados.includes(pagina));
+}
+
+/* Módulo 1 concluído: todas as unidades (e páginas) lidas por completo. */
+export function modulo1Completo() {
+  return UNIDADES_MODULO1.every((unidade) =>
+    estaUnidadeCompleta(unidade.paginas)
+  );
 }
