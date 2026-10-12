@@ -15,6 +15,7 @@ import Unidade4Pagina2 from "./pages/Unidade4/Pagina2";
 import Unidade4Pagina3 from "./pages/Unidade4/Pagina3";
 import Modulo2Home from "./pages/Modulo2Home";
 import Modulo2Unidade1Pagina1 from "./pages/Modulo2Unidade1/Pagina1";
+import Modulo2Unidade2Pagina1 from "./pages/Modulo2Unidade2/Pagina1";
 
 /* Ao mudar de página, volta ao topo — como acontecia com a troca
    de arquivos HTML no protótipo. */
@@ -58,10 +59,14 @@ function App() {
       <Route path="/modulos" element={<SelecaoModulos />} />
       <Route path="/modulo/1" element={<ModuleHome />} />
           <Route path="/modulo/2" element={<Modulo2Home />} />
-          <Route
-            path="/modulo/2/unidade/1"
-            element={<Modulo2Unidade1Pagina1 />}
-          />
+      <Route
+        path="/modulo/2/unidade/1"
+        element={<Modulo2Unidade1Pagina1 />}
+      />
+      <Route
+        path="/modulo/2/unidade/2"
+        element={<Modulo2Unidade2Pagina1 />}
+      />
           <Route path="/unidade/1" element={<Unidade1 />} />
           <Route path="/unidade/2" element={<Unidade2 />} />
           <Route path="/unidade/3" element={<Unidade3Pagina1 />} />

@@ -33,7 +33,7 @@ const EXERCICIOS = [
 ];
 
 function Pagina1() {
-  useDocumentTitle("Módulo 2 · Unidade 1 — Exercícios de fixação");
+  useDocumentTitle("Módulo 2 · Unidade 1 — Exercícios básicos");
 
   const [indice, setIndice] = useState(0);
   const [resultados, setResultados] = useState([]);
@@ -64,7 +64,7 @@ function Pagina1() {
             ? "Unidade 1 · Concluído"
             : `Unidade 1 · Exercício ${indice + 1} de ${EXERCICIOS.length}`
         }
-        title="Exercícios de fixação"
+        title="Exercícios básicos"
       />
 
       {concluido ? (
@@ -82,6 +82,11 @@ function Pagina1() {
           </SectionCard>
           <UnitNav
             prev={{ to: "/modulo/2", label: "◂ Voltar", title: "Módulo 2" }}
+            next={{
+              to: "/modulo/2/unidade/2",
+              label: "Próxima unidade ▸",
+              title: "Exercícios de análise",
+            }}
           />
         </>
       ) : (

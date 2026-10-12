@@ -32,8 +32,13 @@ function Modulo2Home() {
       <ul className="unit-list">
         <UnitCard
           number="1"
-          title="Unidade 1 — Exercícios de fixação"
+          title="Unidade 1 — Exercícios básicos"
           to="/modulo/2/unidade/1"
+        />
+        <UnitCard
+          number="2"
+          title="Unidade 2 — Exercícios de análise"
+          to="/modulo/2/unidade/2"
         />
       </ul>
     </Layout>
