@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 import { FontSizeProvider } from "./contexts/FontSizeContext";
 import { playClickSound, isMobileViewport } from "./utils/buttonSound";
 import ModuleHome from "./pages/ModuleHome";
+import BoasVindas from "./pages/BoasVindas";
 import Unidade1 from "./pages/Unidade1/Pagina1";
 import Unidade2 from "./pages/Unidade2/Pagina1";
 import Unidade3Pagina1 from "./pages/Unidade3/Pagina1";
@@ -48,7 +49,8 @@ function App() {
         <ScrollToTop />
         <ButtonSoundFeedback />
         <Routes>
-          <Route path="/" element={<ModuleHome />} />
+          <Route path="/" element={<BoasVindas />} />
+          <Route path="/modulo/1" element={<ModuleHome />} />
           <Route path="/unidade/1" element={<Unidade1 />} />
           <Route path="/unidade/2" element={<Unidade2 />} />
           <Route path="/unidade/3" element={<Unidade3Pagina1 />} />
@@ -60,7 +62,7 @@ function App() {
             path="/unidade/3/3"
             element={<Navigate to="/unidade/4" replace />}
           />
-          <Route path="*" element={<ModuleHome />} />
+          <Route path="*" element={<BoasVindas />} />
         </Routes>
       </BrowserRouter>
     </FontSizeProvider>
