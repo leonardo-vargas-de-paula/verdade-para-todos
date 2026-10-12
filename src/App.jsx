@@ -16,6 +16,7 @@ import Unidade4Pagina3 from "./pages/Unidade4/Pagina3";
 import Modulo2Home from "./pages/Modulo2Home";
 import Modulo2Unidade1Pagina1 from "./pages/Modulo2Unidade1/Pagina1";
 import Modulo2Unidade2Pagina1 from "./pages/Modulo2Unidade2/Pagina1";
+import { Analytics } from "@vercel/analytics/react";
 
 /* Ao mudar de página, volta ao topo — como acontecia com a troca
    de arquivos HTML no protótipo. */
@@ -51,6 +52,7 @@ function App() {
   return (
     <FontSizeProvider>
       <BrowserRouter>
+        <Analytics/>
         <ScrollToTop />
         <RegistrarAcesso />
         <ButtonSoundFeedback />
