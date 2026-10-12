@@ -1,0 +1,26 @@
+/* Botão grande de início do curso — mesmo gabarito dos demais botões
+   do site (alvo de toque de 64px), mas preenchido na cor de destaque. */
+.btn-start {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: var(--tap-min);
+  padding: 0 32px;
+  margin-top: 18px;
+  background: var(--color-accent);
+  border: 3px solid var(--color-accent-dark);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-start:visited {
+  color: #fff;
+}
+.btn-start:hover {
+  background: var(--color-accent-dark);
+}
