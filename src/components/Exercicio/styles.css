@@ -1,0 +1,84 @@
+.alternatives {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tap-gap);
+  margin-top: 18px;
+}
+
+.alternative {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 14px 18px;
+  background: #fff;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.alternative:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+.alternative .letter {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+}
+
+/* feedback: cor + fundo + bolinha da letra — nunca só a cor */
+.alternative.correct {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+.alternative.correct .letter {
+  background: var(--color-success);
+}
+.alternative.wrong {
+  border-color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+.alternative.wrong .letter {
+  background: var(--color-danger);
+}
+.alternative:disabled {
+  cursor: default;
+}
+
+.exercise-actions {
+  margin-top: var(--tap-gap);
+}
+.btn-next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: 0 26px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  cursor: pointer;
+}
+.btn-next:hover {
+  background: var(--color-bg-alt);
+}

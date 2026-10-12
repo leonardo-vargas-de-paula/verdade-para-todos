@@ -29,6 +29,7 @@
   transform: translateX(4px);
 }
 .unit-card .unit-number {
+  position: relative;
   flex-shrink: 0;
   width: 64px;
   height: 64px;
@@ -41,6 +42,19 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: var(--fs-lg);
+}
+/* selo de unidade totalmente visitada — cor + ícone, não só a cor */
+.unit-card .check-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: var(--color-success);
+  color: #fff;
+  border-radius: 50%;
+  border: 3px solid #fff;
 }
 .unit-card .unit-text h2 {
   font-size: var(--fs-lg);

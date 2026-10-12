@@ -82,9 +82,9 @@ function Pagina3() {
           title: "Como conferir antes de acreditar",
         }}
         next={{
-          to: "/modulo/1",
-          label: "Fim do módulo ▸",
-          title: "Voltar ao Módulo 1",
+          to: "/modulo/2",
+          label: "Próximo módulo ▸",
+          title: "Exercícios",
         }}
       />
     </Layout>

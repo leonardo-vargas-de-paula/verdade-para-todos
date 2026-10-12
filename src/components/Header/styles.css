@@ -21,9 +21,19 @@
   gap: 12px;
   text-decoration: none;
   color: var(--color-primary-dark);
+  padding: 6px 10px;
+  margin: -6px -10px;
+  border-radius: 10px;
+  transition: color 0.15s ease, background 0.15s ease;
 }
 .brand:visited {
   color: var(--color-primary-dark);
+}
+/* hover DEPOIS de :visited — senão a cor "visitado" vence o empate */
+.brand:hover,
+.brand:focus-visible {
+  color: var(--color-accent);
+  background: var(--color-bg-alt);
 }
 .brand-icon {
   width: 44px;
