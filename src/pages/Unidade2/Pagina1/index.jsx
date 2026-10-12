@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import Layout from "../../../components/Layout";
 import BackBar from "../../../components/BackBar";
 import Hero from "../../../components/Hero";
@@ -6,9 +7,17 @@ import IconList from "../../../components/IconList";
 import Callout from "../../../components/Callout";
 import UnitNav from "../../../components/UnitNav";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
+import { UNIDADES_MODULO1 } from "../../../data/modulos";
+import {
+  estaUnidadeCompleta,
+  primeiraPaginaNaoLida,
+} from "../../../utils/progresso";
 
 function Pagina1() {
   useDocumentTitle("Unidade 2 — Os tipos de desinformação");
+  const { pathname } = useLocation();
+  const unidade = UNIDADES_MODULO1.find((u) => u.to === "/unidade/2");
+  const completa = estaUnidadeCompleta(unidade.paginas, pathname);
 
   return (
     <Layout
@@ -60,6 +69,12 @@ function Pagina1() {
           to: "/unidade/3",
           label: "Próxima unidade ▸",
           title: "Como as Fake News são construídas",
+          ...(completa
+            ? {}
+            : {
+                bloqueado: true,
+                paginaFaltante: primeiraPaginaNaoLida(unidade.paginas, pathname),
+              }),
         }}
       />
     </Layout>

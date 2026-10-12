@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import Layout from "../../../components/Layout";
 import BackBar from "../../../components/BackBar";
 import Hero from "../../../components/Hero";
@@ -6,11 +7,19 @@ import UnitNav from "../../../components/UnitNav";
 import IconList from "../../../components/IconList";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
 import Callout from "../../../components/Callout";
+import { UNIDADES_MODULO1 } from "../../../data/modulos";
+import {
+  estaUnidadeCompleta,
+  primeiraPaginaNaoLida,
+} from "../../../utils/progresso";
 
 function Pagina3() {
   useDocumentTitle(
     "Unidade 4 · Página 3 — Como conferir antes de acreditar"
   );
+  const { pathname } = useLocation();
+  const unidade = UNIDADES_MODULO1.find((u) => u.to === "/unidade/4");
+  const completa = estaUnidadeCompleta(unidade.paginas, pathname);
 
   return (
     <Layout
@@ -85,6 +94,12 @@ function Pagina3() {
           to: "/modulo/2",
           label: "Próximo módulo ▸",
           title: "Exercícios",
+          ...(completa
+            ? {}
+            : {
+                bloqueado: true,
+                paginaFaltante: primeiraPaginaNaoLida(unidade.paginas, pathname),
+              }),
         }}
       />
     </Layout>

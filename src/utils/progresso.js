@@ -30,3 +30,20 @@ export function registrarVisita(pathname) {
     /* armazenamento indisponível (modo privado, etc.) — ignora */
   }
 }
+
+/* Unidade considerada "lida": todas as páginas dela já visitadas.
+   `paginaAtual` (opcional) é ignorada — quem está nela já está lendo. */
+export function estaUnidadeCompleta(paginas, paginaAtual = null) {
+  const visitados = lerVisitados();
+  return paginas
+    .filter((pagina) => pagina !== paginaAtual)
+    .every((pagina) => visitados.includes(pagina));
+}
+
+/* Primeira página da unidade que ainda não foi visitada (ou undefined). */
+export function primeiraPaginaNaoLida(paginas, paginaAtual = null) {
+  const visitados = lerVisitados();
+  return paginas
+    .filter((pagina) => pagina !== paginaAtual)
+    .find((pagina) => !visitados.includes(pagina));
+}

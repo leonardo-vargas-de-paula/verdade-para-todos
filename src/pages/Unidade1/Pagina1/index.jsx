@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import Layout from "../../../components/Layout";
 import BackBar from "../../../components/BackBar";
 import Hero from "../../../components/Hero";
@@ -5,9 +6,17 @@ import SectionCard from "../../../components/SectionCard";
 import IconList from "../../../components/IconList";
 import UnitNav from "../../../components/UnitNav";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
+import { UNIDADES_MODULO1 } from "../../../data/modulos";
+import {
+  estaUnidadeCompleta,
+  primeiraPaginaNaoLida,
+} from "../../../utils/progresso";
 
 function Pagina1() {
   useDocumentTitle("Unidade 1 — O que é Fake News");
+  const { pathname } = useLocation();
+  const unidade = UNIDADES_MODULO1.find((u) => u.to === "/unidade/1");
+  const completa = estaUnidadeCompleta(unidade.paginas, pathname);
 
   return (
     <Layout
@@ -59,6 +68,12 @@ function Pagina1() {
           to: "/unidade/2",
           label: "Próxima unidade ▸",
           title: "Os tipos de notícia falsa",
+          ...(completa
+            ? {}
+            : {
+                bloqueado: true,
+                paginaFaltante: primeiraPaginaNaoLida(unidade.paginas, pathname),
+              }),
         }}
       />
     </Layout>

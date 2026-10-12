@@ -65,6 +65,11 @@
   font-size: var(--fs-base);
   color: var(--color-text-muted);
 }
+/* dica permanente em cartão travado — informação não fica escondida */
+.unit-card .unit-text .unit-hint {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
 .unit-card .go-arrow {
   margin-left: auto;
   flex-shrink: 0;
@@ -72,12 +77,34 @@
   height: 34px;
   color: var(--color-accent);
 }
+/* unidade ainda não liberada — botão travado com cadeado */
+.unit-card.locked {
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.unit-card.locked .unit-number {
+  background: var(--color-text-muted);
+}
+.unit-card.locked .lock-icon {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  color: var(--color-text-muted);
+}
+.unit-card.locked:hover {
+  border-color: var(--color-border);
+  transform: none;
+}
 
 @media (max-width: 640px) {
   .unit-card {
     flex-wrap: wrap;
   }
-  .unit-card .go-arrow {
+  .unit-card .go-arrow,
+  .unit-card .lock-icon {
     display: none;
   }
 }
