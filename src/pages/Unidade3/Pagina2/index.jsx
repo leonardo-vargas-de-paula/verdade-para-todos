@@ -15,7 +15,7 @@ function Pagina2() {
     <Layout
       backBar={
         <BackBar
-          backTo="/"
+          backTo="/modulo/1"
           backLabel="Voltar ao Módulo 1"
           trail={["Início", "Módulo 1", "Unidade 3", "Página 2"]}
         />

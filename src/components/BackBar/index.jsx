@@ -5,7 +5,11 @@ import "./styles.css";
 
 /* Botão Voltar sempre visível — porto seguro para o idoso —
    mais a trilha (breadcrumb) mostrando onde o usuário está. */
-function BackBar({ backTo = "/", backLabel = "Voltar ao Módulo 1", trail = [] }) {
+function BackBar({
+  backTo = "/modulo/1",
+  backLabel = "Voltar ao Módulo 1",
+  trail = [],
+}) {
   return (
     <div className="back-bar">
       <div className="container">

@@ -13,7 +13,7 @@ function Pagina1() {
     <Layout
       backBar={
         <BackBar
-          backTo="/"
+          backTo="/modulo/1"
           backLabel="Voltar ao Módulo 1"
           trail={["Início", "Módulo 1", "Unidade 1"]}
         />
@@ -54,7 +54,7 @@ function Pagina1() {
       </SectionCard>
 
       <UnitNav
-        prev={{ to: "/", label: "◂ Voltar", title: "Módulo 1" }}
+        prev={{ to: "/modulo/1", label: "◂ Voltar", title: "Módulo 1" }}
         next={{
           to: "/unidade/2",
           label: "Próxima unidade ▸",
