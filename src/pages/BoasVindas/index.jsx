@@ -24,7 +24,7 @@ function BoasVindas() {
         <p>
           As aulas estão organizadas em unidades, com modulos de conteúdo teórico e exercícios.
         </p>
-        <Link className="btn-start" to="/modulo/1">
+        <Link className="btn-start" to="/modulos">
           Começar o curso ▸
         </Link>
       </SectionCard>

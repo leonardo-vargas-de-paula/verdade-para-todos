@@ -4,6 +4,7 @@ import { FontSizeProvider } from "./contexts/FontSizeContext";
 import { playClickSound, isMobileViewport } from "./utils/buttonSound";
 import RegistrarAcesso from "./components/RegistrarAcesso";
 import ModuleHome from "./pages/ModuleHome";
+import SelecaoModulos from "./pages/SelecaoModulos";
 import BoasVindas from "./pages/BoasVindas";
 import Unidade1 from "./pages/Unidade1/Pagina1";
 import Unidade2 from "./pages/Unidade2/Pagina1";
@@ -53,8 +54,9 @@ function App() {
         <RegistrarAcesso />
         <ButtonSoundFeedback />
         <Routes>
-          <Route path="/" element={<BoasVindas />} />
-          <Route path="/modulo/1" element={<ModuleHome />} />
+      <Route path="/" element={<BoasVindas />} />
+      <Route path="/modulos" element={<SelecaoModulos />} />
+      <Route path="/modulo/1" element={<ModuleHome />} />
           <Route path="/modulo/2" element={<Modulo2Home />} />
           <Route
             path="/modulo/2/unidade/1"

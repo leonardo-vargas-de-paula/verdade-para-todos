@@ -4,10 +4,11 @@ import { ChevronRightIcon, CheckIcon, LockIcon } from "../icons";
 import ConfirmDialog from "../ConfirmDialog";
 import "./styles.css";
 
-/* Cartão de unidade da página inicial do módulo — lista vertical simples.
-   concluida = true mostra o selo de verificado (unidade toda visitada).
-   bloqueada = true deixa o cartão travado (precisa terminar a anterior);
-   o clique abre um diálogo com atalho para a primeira unidade incompleta. */
+/* Cartão de unidade/módulo — lista vertical simples.
+   concluida = true mostra o selo de verificado (tudo visitado).
+   bloqueada = true deixa o cartão travado (precisa terminar o anterior);
+   o clique abre um diálogo com atalho para o conteúdo pendente.
+   tipo="unidade" (padrão) ou "modulo" só muda o texto dos avisos. */
 function UnitCard({
   number,
   title,
@@ -16,9 +17,29 @@ function UnitCard({
   bloqueada = false,
   anteriorTo,
   anteriorTitulo,
+  tipo = "unidade",
 }) {
   const navigate = useNavigate();
   const [dialogoAberto, setDialogoAberto] = useState(false);
+
+  const textos =
+    tipo === "modulo"
+      ? {
+          hint: "Termine o Módulo 1 para liberar",
+          dialogoTitulo: "Módulo ainda não liberado",
+          dialogoMensagem: anteriorTitulo
+            ? `Termine o módulo "${anteriorTitulo}" para continuar.`
+            : "Termine o módulo anterior para continuar.",
+          dialogoConfirmar: "Ir para o módulo anterior",
+        }
+      : {
+          hint: "Termine a unidade anterior para liberar",
+          dialogoTitulo: "Unidade ainda não liberada",
+          dialogoMensagem: anteriorTitulo
+            ? `Termine a unidade "${anteriorTitulo}" para continuar.`
+            : "Termine a unidade anterior para continuar.",
+          dialogoConfirmar: "Ir para a unidade anterior",
+        };
 
   const conteudo = (
     <>
@@ -28,9 +49,7 @@ function UnitCard({
       </span>
       <span className="unit-text">
         <h2>{title}</h2>
-        {bloqueada && (
-          <p className="unit-hint">Termine a unidade anterior para liberar</p>
-        )}
+        {bloqueada && <p className="unit-hint">{textos.hint}</p>}
       </span>
       {bloqueada ? (
         <LockIcon className="lock-icon" />
@@ -52,13 +71,9 @@ function UnitCard({
         </button>
         <ConfirmDialog
           open={dialogoAberto}
-          title="Unidade ainda não liberada"
-          message={
-            anteriorTitulo
-              ? `Termine a unidade "${anteriorTitulo}" para continuar.`
-              : "Termine a unidade anterior para continuar."
-          }
-          confirmLabel="Ir para a unidade anterior"
+          title={textos.dialogoTitulo}
+          message={textos.dialogoMensagem}
+          confirmLabel={textos.dialogoConfirmar}
           cancelLabel="Continuar aqui"
           onConfirm={() => {
             setDialogoAberto(false);

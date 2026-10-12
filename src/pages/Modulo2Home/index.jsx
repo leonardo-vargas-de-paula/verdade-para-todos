@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout";
+import BackBar from "../../components/BackBar";
 import Hero from "../../components/Hero";
 import UnitCard from "../../components/UnitCard";
 import { SearchIcon } from "../../components/icons";
@@ -8,7 +9,15 @@ function Modulo2Home() {
   useDocumentTitle("Módulo 2 — Exercícios");
 
   return (
-    <Layout>
+    <Layout
+      backBar={
+        <BackBar
+          backTo="/modulos"
+          backLabel="Voltar aos módulos"
+          trail={["Início", "Módulo 2"]}
+        />
+      }
+    >
       <Hero
         kicker={
           <>
