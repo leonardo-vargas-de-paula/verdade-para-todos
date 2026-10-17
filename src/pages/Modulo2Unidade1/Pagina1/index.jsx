@@ -7,28 +7,78 @@ import Exercicio from "../../../components/Exercicio";
 import UnitNav from "../../../components/UnitNav";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
 
-/* Exercícios fictícios — textos provisórios, podem ser corrigidos depois. */
+/* Exercícios básicos — Módulo 2, Unidade 1. */
 const EXERCICIOS = [
   {
-    enunciado: "Qual das frases abaixo é um exemplo de fake news?",
+    enunciado:
+      "Quais características podem indicar que uma notícia encontrada na internet é falsa?",
     alternativas: [
-      "O prefeito inaugurou uma nova praça no centro da cidade.",
-      "Cientistas descobriram a cura instantânea de todas as doenças com um chá.",
-      "O time local venceu o jogo de ontem pelo placar de 2 a 1.",
-      "A biblioteca municipal funciona das 9h às 17h.",
+      "Uma notícia é falsa se ela for postada no Facebook",
+      "Texto extremamente alarmista sem nenhuma fonte ou autoridade para confirmar",
+      "Se a notícia foi postada em um portal gratuito ela é falsa, pois informação é algo muito valioso",
+      "Se você não conhece quem postou então ela é falsa",
     ],
     correta: 1,
+    explicacao:
+      "Desconfie de textos alarmistas e sem fonte. Uma notícia confiável indica quem disse, onde e quando, e pode ser conferida em outros veículos sérios.",
   },
   {
     enunciado:
-      "O que devemos fazer ao receber uma notícia muito chocante no celular?",
+      "Quais características indicam que uma notícia pode ser verdadeira?",
     alternativas: [
-      "Compartilhar imediatamente para avisar os amigos.",
-      "Conferir a fonte da informação antes de acreditar ou compartilhar.",
-      "Ignorar qualquer notícia que seja novidade.",
-      "Comentar com raiva na publicação.",
+      "Se a manchete possuir muitas publicações no instagram então ela pode ser verdadeira",
+      "Se alguém muito importante te enviou ela só pode ser verdadeira",
+      "Possui fonte e a mesma informação pode ser encontrada e confirmada em diferentes portais e sites",
+      "A notícia fala exatamente o que você estava procurando, então a informação te encontrou",
     ],
+    correta: 2,
+    explicacao:
+      "Uma informação confiável pode ser confirmada em mais de um lugar. Ter muitas curtidas ou compartilhamentos nas redes sociais não é prova de que é verdade.",
+  },
+  {
+    enunciado:
+      "Você acaba de encontrar uma receita caseira para curar artrite à venda com muitas curtidas nas redes sociais, o que você pode fazer?",
+    alternativas: [
+      "Faço a receita imediatamente",
+      "Mostro para meus amigos para eles aprenderem também",
+      "Pergunto para quem postou se funciona mesmo a receita e se ele já testou",
+      "Pesquiso a informação em outros sites e busco o parecer de profissionais do assunto",
+    ],
+    correta: 3,
+    explicacao:
+      "Antes de acreditar ou compartilhar, pesquise em fontes confiáveis e ouça profissionais da área. Promessas de cura milagrosa costumam ser falsas e podem colocar sua saúde em risco.",
+  },
+  {
+    enunciado: (
+      <>
+        Responda a questão de verdadeiro ou falso baseado no seguinte cenário
+        fictício:
+        <br />
+        O seu sobrinho te enviou uma manchete no celular mas você descobriu que
+        se tratava de uma Fake News. Ele estava tentando te enganar?
+      </>
+    ),
+    alternativas: ["Verdadeiro", "Falso"],
     correta: 1,
+    explicacao:
+      "Nem toda informação falsa é divulgada com o intuito de enganar: quem te enviou pode acreditar que se trata de algo verídico.",
+  },
+  {
+    enunciado: (
+      <>
+        Responda a questão de verdadeiro ou falso baseado no seguinte cenário
+        fictício:
+        <br />
+        Sua filha te enviou uma Fake News que ela acredita fielmente ser
+        verdade. Diante dessa situação, você deve mostrar para ela de forma
+        calma quais pontos indicam que se trata de uma informação incorreta em
+        um ambiente privado.
+      </>
+    ),
+    alternativas: ["Verdadeiro", "Falso"],
+    correta: 0,
+    explicacao:
+      "Evite ataques agressivos, especialmente em público. Aborde o tema de forma clara e tranquila para evitar constrangimentos.",
   },
 ];
 
@@ -37,7 +87,8 @@ function Pagina1() {
 
   const [indice, setIndice] = useState(0);
   const [resultados, setResultados] = useState([]);
-  const concluido = resultados.length === EXERCICIOS.length;
+  const [finalizado, setFinalizado] = useState(false);
+  const concluido = finalizado;
   const acertos = resultados.filter(Boolean).length;
 
   const handleResponder = (acertou) => {
@@ -45,7 +96,8 @@ function Pagina1() {
   };
 
   const handleProximo = () => {
-    setIndice((i) => i + 1);
+    if (indice === EXERCICIOS.length - 1) setFinalizado(true);
+    else setIndice((i) => i + 1);
   };
 
   return (
@@ -95,6 +147,7 @@ function Pagina1() {
           enunciado={EXERCICIOS[indice].enunciado}
           alternativas={EXERCICIOS[indice].alternativas}
           corretaIndex={EXERCICIOS[indice].correta}
+          explicacao={EXERCICIOS[indice].explicacao}
           aoResponder={handleResponder}
           onProximo={handleProximo}
           ultimo={indice === EXERCICIOS.length - 1}

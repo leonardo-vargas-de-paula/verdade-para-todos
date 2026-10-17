@@ -5,13 +5,15 @@ import "./styles.css";
 
 const LETTERS = ["A", "B", "C", "D"];
 
-/* Exercício de múltipla escolha com 4 alternativas.
+/* Exercício de múltipla escolha (2 ou mais alternativas).
    Uma pergunta por vez; após responder, mostra feedback
-   (cor + ícone + texto) e o botão para avançar. */
+   (cor + ícone + texto) e o botão para avançar.
+   `explicacao` (opcional) é um texto extra mostrado no feedback. */
 function Exercicio({
   enunciado,
   alternativas,
   corretaIndex,
+  explicacao,
   aoResponder,
   onProximo,
   ultimo,
@@ -28,7 +30,7 @@ function Exercicio({
 
   return (
     <>
-      <SectionCard title={enunciado}>
+      <SectionCard title={enunciado} className="exercicio-card">
         <div className="alternatives" role="group" aria-label="Alternativas">
           {alternativas.map((alternativa, index) => {
             let className = "alternative";
@@ -63,6 +65,10 @@ function Exercicio({
             ? "Você acertou! Continue assim."
             : `A resposta correta é a alternativa ${LETTERS[corretaIndex]}: ${alternativas[corretaIndex]}`}
         </Callout>
+      )}
+
+      {respondida && explicacao && (
+        <p className="exercise-explicacao">{explicacao}</p>
       )}
 
       {respondida && (

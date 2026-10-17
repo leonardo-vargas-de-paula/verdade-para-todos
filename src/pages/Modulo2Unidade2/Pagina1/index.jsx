@@ -1,10 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../../components/Layout";
 import BackBar from "../../../components/BackBar";
 import Hero from "../../../components/Hero";
-import SectionCard from "../../../components/SectionCard";
 import Exercicio from "../../../components/Exercicio";
-import UnitNav from "../../../components/UnitNav";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
 
 /* Exercícios de análise fictícios — textos provisórios,
@@ -20,6 +19,8 @@ const EXERCICIOS = [
       "Comprar o remédio imediatamente, porque urgência não espera.",
     ],
     correta: 1,
+    explicacao:
+      "Mensagens com tom de urgência e promessas de cura são sinais clássicos de desinformação. Confirme em fontes oficiais antes de repassar — e nunca compartilhe antes de checar.",
   },
   {
     enunciado:
@@ -31,6 +32,8 @@ const EXERCICIOS = [
       "A descoberta é muito boa para ser verdade, então deve ser mentira sempre.",
     ],
     correta: 2,
+    explicacao:
+      "Quando uma notícia diz que 'cientistas comprovaram' mas não indica o estudo, os pesquisadores nem onde foi publicado, não há como verificar. A ausência de fontes que possam ser conferidas é um dos principais sinais de alerta.",
   },
 ];
 
@@ -39,15 +42,16 @@ function Pagina1() {
 
   const [indice, setIndice] = useState(0);
   const [resultados, setResultados] = useState([]);
-  const concluido = resultados.length === EXERCICIOS.length;
-  const acertos = resultados.filter(Boolean).length;
+  const [finalizado, setFinalizado] = useState(false);
+  const concluido = finalizado;
 
   const handleResponder = (acertou) => {
     setResultados((anteriores) => [...anteriores, acertou]);
   };
 
   const handleProximo = () => {
-    setIndice((i) => i + 1);
+    if (indice === EXERCICIOS.length - 1) setFinalizado(true);
+    else setIndice((i) => i + 1);
   };
 
   return (
@@ -70,26 +74,11 @@ function Pagina1() {
       />
 
       {concluido ? (
-        <>
-          <SectionCard title="Exercícios concluídos!">
-            <p>Você terminou os exercícios desta unidade.</p>
-            <p>
-              Você acertou <strong>{acertos}</strong> de{" "}
-              <strong>{EXERCICIOS.length}</strong> exercícios.
-            </p>
-            <p>
-              Sempre que quiser, revise o conteúdo no Módulo 1 e volte para
-              praticar novamente.
-            </p>
-          </SectionCard>
-          <UnitNav
-            prev={{
-              to: "/modulo/2",
-              label: "◂ Voltar",
-              title: "Módulo 2",
-            }}
-          />
-        </>
+        <div className="exercise-actions" style={{ marginTop: "var(--tap-gap)" }}>
+          <Link className="btn-next" to="/modulos">
+            Voltar ao seletor de módulos ▸
+          </Link>
+        </div>
       ) : (
         <Exercicio
           key={indice}

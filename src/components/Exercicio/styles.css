@@ -1,3 +1,21 @@
+/* enunciado do exercício em preto (demais section-cards mantêm o verde-escuro) */
+.exercicio-card h2 {
+  color: var(--color-text);
+}
+
+/* explicação do exercício — parágrafo próprio abaixo do feedback,
+   com o mesmo tamanho (padding/margem) do Callout */
+.exercise-explicacao {
+  margin-top: 18px;
+  padding: 20px 22px;
+  background: var(--color-bg-alt);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+}
+
 .alternatives {
   display: flex;
   flex-direction: column;
