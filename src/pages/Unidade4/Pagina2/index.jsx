@@ -38,11 +38,11 @@ function Pagina2() {
             },
             {
               title: "Sátira",
-              text: "Usa humor e exagero para criticar. Não deve ser levada ao pé da letra — muitas mensagens falsas se disfarçam de sátira.",
+              text: "Usa humor e exagero para criticar. Não deve ser levada ao pé da letra.",
             },
             {
               title: "Opinião",
-              text: "Expressa o ponto de vista de quem escreve. É diferente de um fato e costuma aparecer em artigos e comentários.",
+              text: "Expressa o ponto de vista de quem escreve. É diferente de um fato.",
             },
           ]}
         />
