@@ -1,11 +1,11 @@
-import Layout from "../../components/Layout";
-import BackBar from "../../components/BackBar";
-import Hero from "../../components/Hero";
-import UnitCard from "../../components/UnitCard";
-import { SearchIcon } from "../../components/icons";
-import useDocumentTitle from "../../utils/useDocumentTitle";
-import { UNIDADES_MODULO1 } from "../../data/modulos";
-import { estaUnidadeCompleta } from "../../utils/progresso";
+import Layout from "../../../components/Layout";
+import BackBar from "../../../components/BackBar";
+import Hero from "../../../components/Hero";
+import UnitCard from "../../../components/UnitCard";
+import { SearchIcon } from "../../../components/icons";
+import useDocumentTitle from "../../../utils/useDocumentTitle";
+import { UNIDADES_MODULO1 } from "../../../data/modulos";
+import { estaUnidadeCompleta } from "../../../utils/progresso";
 
 function ModuleHome() {
   useDocumentTitle("Módulo 1 — O que são Fake News");

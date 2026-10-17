@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Layout from "../../../components/Layout";
-import BackBar from "../../../components/BackBar";
-import Hero from "../../../components/Hero";
-import Exercicio from "../../../components/Exercicio";
-import useDocumentTitle from "../../../utils/useDocumentTitle";
+import Layout from "../../../../components/Layout";
+import BackBar from "../../../../components/BackBar";
+import Hero from "../../../../components/Hero";
+import Exercicio from "../../../../components/Exercicio";
+import useDocumentTitle from "../../../../utils/useDocumentTitle";
 
 /* Exercícios de análise fictícios — textos provisórios,
    podem ser corrigidos depois. Cenários para treinar o julgamento. */

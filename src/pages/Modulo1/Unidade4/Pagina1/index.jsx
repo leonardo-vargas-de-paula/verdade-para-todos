@@ -1,10 +1,10 @@
-import Layout from "../../../components/Layout";
-import BackBar from "../../../components/BackBar";
-import Hero from "../../../components/Hero";
-import SectionCard from "../../../components/SectionCard";
-import IconList from "../../../components/IconList";
-import UnitNav from "../../../components/UnitNav";
-import useDocumentTitle from "../../../utils/useDocumentTitle";
+import Layout from "../../../../components/Layout";
+import BackBar from "../../../../components/BackBar";
+import Hero from "../../../../components/Hero";
+import SectionCard from "../../../../components/SectionCard";
+import IconList from "../../../../components/IconList";
+import UnitNav from "../../../../components/UnitNav";
+import useDocumentTitle from "../../../../utils/useDocumentTitle";
 
 function Pagina1() {
   useDocumentTitle("Unidade 4 — Como conferir antes de acreditar");

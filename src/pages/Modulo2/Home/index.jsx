@@ -1,9 +1,9 @@
-import Layout from "../../components/Layout";
-import BackBar from "../../components/BackBar";
-import Hero from "../../components/Hero";
-import UnitCard from "../../components/UnitCard";
-import { SearchIcon } from "../../components/icons";
-import useDocumentTitle from "../../utils/useDocumentTitle";
+import Layout from "../../../components/Layout";
+import BackBar from "../../../components/BackBar";
+import Hero from "../../../components/Hero";
+import UnitCard from "../../../components/UnitCard";
+import { SearchIcon } from "../../../components/icons";
+import useDocumentTitle from "../../../utils/useDocumentTitle";
 
 function Modulo2Home() {
   useDocumentTitle("Módulo 2 — Exercícios");

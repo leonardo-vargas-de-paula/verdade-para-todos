@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Layout from "../../../components/Layout";
-import BackBar from "../../../components/BackBar";
-import Hero from "../../../components/Hero";
-import SectionCard from "../../../components/SectionCard";
-import Exercicio from "../../../components/Exercicio";
-import UnitNav from "../../../components/UnitNav";
-import useDocumentTitle from "../../../utils/useDocumentTitle";
+import Layout from "../../../../components/Layout";
+import BackBar from "../../../../components/BackBar";
+import Hero from "../../../../components/Hero";
+import SectionCard from "../../../../components/SectionCard";
+import Exercicio from "../../../../components/Exercicio";
+import UnitNav from "../../../../components/UnitNav";
+import useDocumentTitle from "../../../../utils/useDocumentTitle";
 
 /* Exercícios básicos — Módulo 2, Unidade 1. */
 const EXERCICIOS = [
