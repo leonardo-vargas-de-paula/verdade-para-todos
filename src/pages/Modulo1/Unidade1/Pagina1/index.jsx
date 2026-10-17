@@ -1,16 +1,16 @@
 import { useLocation } from "react-router-dom";
-import Layout from "../../../components/Layout";
-import BackBar from "../../../components/BackBar";
-import Hero from "../../../components/Hero";
-import SectionCard from "../../../components/SectionCard";
-import IconList from "../../../components/IconList";
-import UnitNav from "../../../components/UnitNav";
-import useDocumentTitle from "../../../utils/useDocumentTitle";
-import { UNIDADES_MODULO1 } from "../../../data/modulos";
+import Layout from "../../../../components/Layout";
+import BackBar from "../../../../components/BackBar";
+import Hero from "../../../../components/Hero";
+import SectionCard from "../../../../components/SectionCard";
+import IconList from "../../../../components/IconList";
+import UnitNav from "../../../../components/UnitNav";
+import useDocumentTitle from "../../../../utils/useDocumentTitle";
+import { UNIDADES_MODULO1 } from "../../../../data/modulos";
 import {
   estaUnidadeCompleta,
   primeiraPaginaNaoLida,
-} from "../../../utils/progresso";
+} from "../../../../utils/progresso";
 
 function Pagina1() {
   useDocumentTitle("Unidade 1 — O que é Fake News");
