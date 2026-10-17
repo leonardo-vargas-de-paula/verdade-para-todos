@@ -41,7 +41,7 @@ function Pagina2() {
               text: "Usa humor e exagero para criticar. Não deve ser levada ao pé da letra.",
             },
             {
-              title: "Opinião",
+              title: "Artigo de opinião",
               text: "Expressa o ponto de vista de quem escreve. É diferente de um fato.",
             },
           ]}
