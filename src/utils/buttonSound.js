@@ -8,6 +8,34 @@ let audioContext = null;
 const VOLUME = 0.07;
 const DURATION = 0.12;
 
+/* Reserva o AudioContext no primeiro gesto do usuário, para que o
+   primeiro clique real já consiga tocar (política de autoplay). */
+function garantirAudioContext() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return null;
+    if (!audioContext) {
+      audioContext = new AudioCtx();
+    }
+    if (audioContext.state === "suspended") {
+      audioContext.resume();
+    }
+    return audioContext;
+  } catch {
+    return null;
+  }
+}
+
+if (typeof window !== "undefined") {
+  const preparar = () => {
+    garantirAudioContext();
+    window.removeEventListener("pointerdown", preparar);
+    window.removeEventListener("keydown", preparar);
+  };
+  window.addEventListener("pointerdown", preparar, { once: true });
+  window.addEventListener("keydown", preparar, { once: true });
+}
+
 /* O som só toca em telas de celular (mesmo breakpoint responsivo do site).
    Avaliado a cada clique, então acompanha a orientação do aparelho. */
 export function isMobileViewport() {
@@ -16,20 +44,13 @@ export function isMobileViewport() {
 
 export function playClickSound() {
   try {
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (!AudioCtx) return;
+    const ctx = garantirAudioContext();
+    if (!ctx) return;
 
-    if (!audioContext) {
-      audioContext = new AudioCtx();
-    }
-    if (audioContext.state === "suspended") {
-      audioContext.resume();
-    }
+    const now = ctx.currentTime;
 
-    const now = audioContext.currentTime;
-
-    const oscillator = audioContext.createOscillator();
-    const gain = audioContext.createGain();
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
 
     oscillator.type = "sine";
     oscillator.frequency.setValueAtTime(750, now);
@@ -40,7 +61,7 @@ export function playClickSound() {
     gain.gain.exponentialRampToValueAtTime(0.0001, now + DURATION);
 
     oscillator.connect(gain);
-    gain.connect(audioContext.destination);
+    gain.connect(ctx.destination);
 
     oscillator.start(now);
     oscillator.stop(now + DURATION + 0.01);
