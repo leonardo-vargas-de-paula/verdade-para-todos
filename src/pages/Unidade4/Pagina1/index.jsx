@@ -20,7 +20,7 @@ function Pagina1() {
       }
     >
       <Hero
-        kicker="Unidade 4 · Página 1 de 3"
+        kicker="Unidade 4 · Página 1 de 4"
         title="Como conferir antes de acreditar"
       />
 
@@ -29,11 +29,20 @@ function Pagina1() {
           items={[
             {
               title: "Investigue a fonte e o autor",
-              text: "Sempre busque a autoria de um texto. E se possível pesquise sobre o autor e a fonte da informação.",
-            },
-            {
-              title: "Identifique o gênero textual",
-              text: "É importante verificar se a informação passada é uma notícia, sátira ou uma opnião. Cada gênero textual tem uma função diferente e deve ser interpretado de acordo com o contexto.",
+              text: "Sempre busque a autoria de um texto. Procure o nome de quem escreveu e o veículo onde a informação foi publicada. Se possível, pesquise sobre o autor e a fonte antes de confiar.",
+              content: (
+                <>
+                  <img
+                    className="card-image"
+                    src="/img/exemplo-autor.svg"
+                    alt="Recorte de notícia com a linha de crédito destacando o autor (Maria Silva), o veículo (Jornal Exemplo) e a data de publicação"
+                  />
+                  <p>
+                    Desconfie quando não há autor nem veículo identificados:
+                    informações sérias costumam dizer quem escreveu e de onde vieram.
+                  </p>
+                </>
+              ),
             },
           ]}
         />
@@ -48,7 +57,7 @@ function Pagina1() {
         next={{
           to: "/unidade/4/2",
           label: "Próxima página ▸",
-          title: "Continuação",
+          title: "Identifique o gênero textual",
         }}
       />
     </Layout>
