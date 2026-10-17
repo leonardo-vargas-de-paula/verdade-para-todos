@@ -24,11 +24,11 @@ function Pagina2() {
         title="Identifique o gênero textual"
       />
 
-      <SectionCard title="Nem todo texto é uma notícia">
+      <SectionCard>
         <p>
           Antes de acreditar, veja que tipo de texto você está lendo. Cada gênero
           tem uma função diferente e deve ser interpretado de acordo com o
-          contexto:
+          contexto. Exemplos de gêneros:
         </p>
         <IconList
           items={[

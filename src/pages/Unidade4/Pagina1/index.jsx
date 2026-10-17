@@ -34,7 +34,7 @@ function Pagina1() {
                 <>
                   <img
                     className="card-image"
-                    src="/img/exemplo-autor.svg"
+                    src="/img/imagem-exemplo-autor.svg"
                     alt="Recorte de notícia com a linha de crédito destacando o autor (Maria Silva), o veículo (Jornal Exemplo) e a data de publicação"
                   />
                   <p>
