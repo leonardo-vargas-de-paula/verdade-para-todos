@@ -1,25 +1,15 @@
-import { useLocation } from "react-router-dom";
 import Layout from "../../../components/Layout";
 import BackBar from "../../../components/BackBar";
 import Hero from "../../../components/Hero";
 import SectionCard from "../../../components/SectionCard";
 import UnitNav from "../../../components/UnitNav";
-import IconList from "../../../components/IconList";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
-import Callout from "../../../components/Callout";
-import { UNIDADES_MODULO1 } from "../../../data/modulos";
-import {
-  estaUnidadeCompleta,
-  primeiraPaginaNaoLida,
-} from "../../../utils/progresso";
+import IconList from "../../../components/IconList";
 
 function Pagina3() {
   useDocumentTitle(
-    "Unidade 4 · Página 3 — Como conferir antes de acreditar"
+    "Unidade 4 · Página 3 — Cuidado com a URL"
   );
-  const { pathname } = useLocation();
-  const unidade = UNIDADES_MODULO1.find((u) => u.to === "/unidade/4");
-  const completa = estaUnidadeCompleta(unidade.paginas, pathname);
 
   return (
     <Layout
@@ -32,74 +22,51 @@ function Pagina3() {
       }
     >
       <Hero
-        kicker="Unidade 4 · Página 3 de 3"
-        title="Como conferir antes de acreditar (parte 3)"
+        kicker="Unidade 4 · Página 3 de 4"
+        title="Cuidado com a URL"
       />
 
       <SectionCard>
-<IconList
+        <IconList
           items={[
             {
-              title: "Pesquise em agências de checagem",
+              title: "Cuidado com a URL",
               text: (
                 <>
-                  Agências de checagem de fatos são organizações que verificam a
-                  veracidade de informações e notícias. Elas podem ser uma
-                  fonte confiável ajudar a confirmar se uma informação é
-                  verdadeira ou falsa.
-                  <br />
-                  Exemplos:
+                  A URL é o endereço de um site. Como por exemplo o site deste
+                  curso utiliza<br /> 
+                  <code className="url-chip">verdade-para-todos.vercel.app</code>
+                  {" "}
+                   e você pode conferir na porção superior da janela do navegador.
                 </>
               ),
               content: (
-                <ul className="examples-list">
-                  <li>
-                    Fato ou Fake —{" "}
-                    <a
-                      href="https://g1.globo.com/fato-ou-fake/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      g1.globo.com/fato-ou-fake
-                    </a>
-                  </li>
-                  <li>
-                    Agência Lupa —{" "}
-                    <a
-                      href="https://www.agencialupa.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      agencialupa.org
-                    </a>
-                  </li>
-                </ul>
+                <>
+                  <img
+                    className="card-image"
+                    src="/img/exemplo-url.svg"
+                    alt="Barra de endereço do navegador mostrando a URL do curso: https://verdade-para-todos.vercel.app"
+                  />
+                  <p>
+                    Sites fraudulentos podem tentar imitar a URL de sites famosos, mas com pequenas alterações.
+                  </p>
+                </>
               ),
             },
           ]}
         />
       </SectionCard>
 
-      <Callout variant="danger" title="Cuidados">
-        Antes de confiar cegamente em uma agência de checagem, pesquise sobre a reputação dela. Nem todas as agências de checagem são confiáveis, e algumas podem ter viés político ou interesses próprios. Sempre busque informações de múltiplas fontes confiáveis antes de formar uma opinião.
-      </Callout>
-
       <UnitNav
         prev={{
           to: "/unidade/4/2",
           label: "◂ Página anterior",
-          title: "Como conferir antes de acreditar",
+          title: "Identifique o gênero textual",
         }}
         next={{
-          to: "/modulos",
-          label: "Próximo módulo ▸",
-          title: "Escolha um módulo",
-          ...(completa
-            ? {}
-            : {
-                bloqueado: true,
-                paginaFaltante: primeiraPaginaNaoLida(unidade.paginas, pathname),
-              }),
+          to: "/unidade/4/4",
+          label: "Próxima página ▸",
+          title: "Pesquise em agências de checagem",
         }}
       />
     </Layout>
