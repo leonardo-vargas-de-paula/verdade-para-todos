@@ -2,9 +2,10 @@
    Guarda a lista de rotas já visitadas — hoje só gravamos;
    o uso visual (selos, etc.) pode consumir lerVisitados() depois. */
 
-import { UNIDADES_MODULO1 } from "../data/modulos";
+import { UNIDADES_MODULO1, UNIDADES_MODULO2 } from "../data/modulos";
 
 const CHAVE = "vpt:visitados";
+const CHAVE_CONCLUIDAS = "vpt:unidades-concluidas";
 
 export function lerVisitados() {
   try {
@@ -17,10 +18,8 @@ export function lerVisitados() {
 }
 
 export function registrarVisita(pathname) {
-  if (!pathname) return;
-  const rota = pathname !== "/" && pathname.endsWith("/")
-    ? pathname.slice(0, -1)
-    : pathname;
+  const rota = normalizeRota(pathname);
+  if (!rota) return;
 
   try {
     const visitados = lerVisitados();
@@ -55,4 +54,53 @@ export function modulo1Completo() {
   return UNIDADES_MODULO1.every((unidade) =>
     estaUnidadeCompleta(unidade.paginas)
   );
+}
+
+/* ---- Unidades concluídas (Módulo 2 · exercícios) ------------------------
+   Diferente da leitura de páginas do Módulo 1, aqui a conclusão é marcada
+   explicitamente quando o usuário termina os exercícios da unidade. */
+
+function lerConcluidas() {
+  try {
+    const bruto = window.localStorage.getItem(CHAVE_CONCLUIDAS);
+    const lista = bruto ? JSON.parse(bruto) : [];
+    return Array.isArray(lista) ? lista : [];
+  } catch {
+    return [];
+  }
+}
+
+/* Marca uma unidade (rota) como concluída — chamado ao terminar os exercícios. */
+export function marcarUnidadeConcluida(rota) {
+  const alvo = normalizeRota(rota);
+  if (!alvo) return;
+
+  try {
+    const concluidas = lerConcluidas();
+    if (!concluidas.includes(alvo)) {
+      concluidas.push(alvo);
+      window.localStorage.setItem(CHAVE_CONCLUIDAS, JSON.stringify(concluidas));
+    }
+  } catch {
+    /* armazenamento indisponível (modo privado, etc.) — ignora */
+  }
+}
+
+/* Unidade de exercícios concluída? */
+export function unidadeConcluida(rota) {
+  const alvo = normalizeRota(rota);
+  return !!alvo && lerConcluidas().includes(alvo);
+}
+
+/* Módulo 2 concluído: todas as unidades de exercícios terminadas. */
+export function modulo2Completo() {
+  return UNIDADES_MODULO2.every((unidade) => unidadeConcluida(unidade.to));
+}
+
+/* Normaliza a rota removendo a barra final (exceto na raiz). */
+function normalizeRota(pathname) {
+  if (!pathname) return "";
+  return pathname !== "/" && pathname.endsWith("/")
+    ? pathname.slice(0, -1)
+    : pathname;
 }

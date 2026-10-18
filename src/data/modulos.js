@@ -27,3 +27,22 @@ export const UNIDADES_MODULO1 = [
     paginas: ["/unidade/4", "/unidade/4/2", "/unidade/4/3", "/unidade/4/4"],
   },
 ];
+
+/* Estrutura das unidades do Módulo 2 — unidades de exercício, uma página
+   cada. Aqui a unidade só vale como "concluída" quando o usuário termina
+   todos os exercícios (não basta visitar): a marcação é gravada em
+   marcarUnidadeConcluida() e usada para a trava de avanço. */
+export const UNIDADES_MODULO2 = [
+  {
+    number: "1",
+    title: "Unidade 1 — Exercícios básicos",
+    to: "/modulo/2/unidade/1",
+    paginas: ["/modulo/2/unidade/1"],
+  },
+  {
+    number: "2",
+    title: "Unidade 2 — Exercícios de análise",
+    to: "/modulo/2/unidade/2",
+    paginas: ["/modulo/2/unidade/2"],
+  },
+];

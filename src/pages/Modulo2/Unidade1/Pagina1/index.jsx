@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../../../components/Layout";
 import BackBar from "../../../../components/BackBar";
 import Hero from "../../../../components/Hero";
@@ -6,8 +6,13 @@ import SectionCard from "../../../../components/SectionCard";
 import Exercicio from "../../../../components/Exercicio";
 import UnitNav from "../../../../components/UnitNav";
 import useDocumentTitle from "../../../../utils/useDocumentTitle";
+import {
+  marcarUnidadeConcluida,
+  unidadeConcluida,
+} from "../../../../utils/progresso";
 
 /* Exercícios básicos — Módulo 2, Unidade 1. */
+const ROTA_UNIDADE = "/modulo/2/unidade/1";
 const EXERCICIOS = [
   {
     enunciado:
@@ -90,6 +95,13 @@ function Pagina1() {
   const [finalizado, setFinalizado] = useState(false);
   const concluido = finalizado;
   const acertos = resultados.filter(Boolean).length;
+  /* `finalizado` cobre o render imediato; a persistência vem em seguida. */
+  const unidadeCompleta = finalizado || unidadeConcluida(ROTA_UNIDADE);
+
+  /* Terminou os exercícios → grava a unidade como concluída (trava de avanço). */
+  useEffect(() => {
+    if (finalizado) marcarUnidadeConcluida(ROTA_UNIDADE);
+  }, [finalizado]);
 
   const handleResponder = (acertou) => {
     setResultados((anteriores) => [...anteriores, acertou]);
@@ -137,6 +149,12 @@ function Pagina1() {
               to: "/modulo/2/unidade/2",
               label: "Próxima unidade ▸",
               title: "Exercícios de análise",
+              ...(unidadeCompleta
+                ? {}
+                : {
+                    bloqueado: true,
+                    paginaFaltante: ROTA_UNIDADE,
+                  }),
             }}
           />
         </>

@@ -1,13 +1,15 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Layout from "../../../../components/Layout";
 import BackBar from "../../../../components/BackBar";
 import Hero from "../../../../components/Hero";
 import Exercicio from "../../../../components/Exercicio";
+import UnitNav from "../../../../components/UnitNav";
 import useDocumentTitle from "../../../../utils/useDocumentTitle";
+import { marcarUnidadeConcluida } from "../../../../utils/progresso";
 
 /* Exercícios de análise fictícios — textos provisórios,
    podem ser corrigidos depois. Cenários para treinar o julgamento. */
+const ROTA_UNIDADE = "/modulo/2/unidade/2";
 const EXERCICIOS = [
   {
     enunciado:
@@ -45,6 +47,11 @@ function Pagina1() {
   const [finalizado, setFinalizado] = useState(false);
   const concluido = finalizado;
 
+  /* Terminou os exercícios → grava a unidade como concluída (trava de avanço). */
+  useEffect(() => {
+    if (finalizado) marcarUnidadeConcluida(ROTA_UNIDADE);
+  }, [finalizado]);
+
   const handleResponder = (acertou) => {
     setResultados((anteriores) => [...anteriores, acertou]);
   };
@@ -73,11 +80,18 @@ function Pagina1() {
       />
 
       {concluido ? (
-        <div className="exercise-actions" style={{ marginTop: "var(--tap-gap)" }}>
-          <Link className="btn-next" to="/modulos">
-            Voltar ao seletor de módulos ▸
-          </Link>
-        </div>
+        <UnitNav
+          prev={{
+            to: "/modulo/2/unidade/1",
+            label: "◂ Unidade anterior",
+            title: "Exercícios básicos",
+          }}
+          next={{
+            to: "/modulos",
+            label: "Voltar ao seletor ▸",
+            title: "Escolha um módulo",
+          }}
+        />
       ) : (
         <Exercicio
           key={indice}
