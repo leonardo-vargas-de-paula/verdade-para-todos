@@ -36,18 +36,3 @@
   width: 26px;
   height: 26px;
 }
-
-/* trilha (breadcrumb) — mostra onde o usuário está, sem precisar lembrar */
-.trail {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-size: var(--fs-sm);
-  color: var(--color-text-muted);
-  flex-wrap: wrap;
-}
-.trail .current {
-  color: var(--color-primary-dark);
-  font-weight: 700;
-}

@@ -25,12 +25,11 @@ function Pagina1() {
         <BackBar
           backTo="/modulo/1"
           backLabel="Voltar ao Módulo 1"
-          trail={["Início", "Módulo 1", "Unidade 2"]}
         />
       }
     >
       <Hero
-        kicker="Unidade 2 · Página 1 de 1"
+        kicker="Módulo 1 · Unidade 2 · Página 1 de 1"
         title="Os tipos de desinformação"
       />
 

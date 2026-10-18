@@ -60,15 +60,14 @@ function Pagina1() {
         <BackBar
           backTo="/modulo/2"
           backLabel="Voltar ao Módulo 2"
-          trail={["Início", "Módulo 2", "Unidade 2"]}
         />
       }
     >
       <Hero
         kicker={
           concluido
-            ? "Unidade 2 · Concluído"
-            : `Unidade 2 · Exercício ${indice + 1} de ${EXERCICIOS.length}`
+            ? "Módulo 2 · Unidade 2 · Concluído"
+            : `Módulo 2 · Unidade 2 · Exercício ${indice + 1} de ${EXERCICIOS.length}`
         }
         title="Exercícios de análise"
       />

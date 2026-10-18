@@ -15,12 +15,11 @@ function Pagina1() {
         <BackBar
           backTo="/modulo/1"
           backLabel="Voltar ao Módulo 1"
-          trail={["Início", "Módulo 1", "Unidade 3", "Página 1"]}
         />
       }
     >
       <Hero
-        kicker="Unidade 3 · Página 1 de 2"
+        kicker="Módulo 1 · Unidade 3 · Página 1 de 2"
         title="Como as Fake News são construídas"
       />
 

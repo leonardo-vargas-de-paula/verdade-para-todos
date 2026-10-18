@@ -14,7 +14,6 @@ function Modulo2Home() {
         <BackBar
           backTo="/modulos"
           backLabel="Voltar aos módulos"
-          trail={["Início", "Módulo 2"]}
         />
       }
     >

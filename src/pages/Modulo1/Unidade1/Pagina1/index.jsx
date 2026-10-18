@@ -24,11 +24,13 @@ function Pagina1() {
         <BackBar
           backTo="/modulo/1"
           backLabel="Voltar ao Módulo 1"
-          trail={["Início", "Módulo 1", "Unidade 1"]}
         />
       }
     >
-      <Hero kicker="Unidade 1 · Página 1 de 1" title="O que é Fake News?" />
+      <Hero
+        kicker="Módulo 1 · Unidade 1 · Página 1 de 1"
+        title="O que é Fake News?"
+      />
 
       <SectionCard title="Definição">
         <p>

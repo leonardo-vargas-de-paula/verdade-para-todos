@@ -15,12 +15,11 @@ function Pagina2() {
         <BackBar
           backTo="/modulo/1"
           backLabel="Voltar ao Módulo 1"
-          trail={["Início", "Módulo 1", "Unidade 4", "Página 2"]}
         />
       }
     >
       <Hero
-        kicker="Unidade 4 · Página 2 de 4"
+        kicker="Módulo 1 · Unidade 4 · Página 2 de 4"
         title="Identifique o gênero textual"
       />
 
