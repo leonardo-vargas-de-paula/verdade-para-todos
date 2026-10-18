@@ -59,6 +59,7 @@ const EXERCICIOS = [
         Responda a questão de verdadeiro ou falso baseado no seguinte cenário
         fictício:
         <br />
+        <br />
         O seu sobrinho te enviou uma manchete no celular mas você descobriu que
         se tratava de uma Fake News. Ele estava tentando te enganar?
       </>
@@ -73,6 +74,7 @@ const EXERCICIOS = [
       <>
         Responda a questão de verdadeiro ou falso baseado no seguinte cenário
         fictício:
+        <br />
         <br />
         Sua filha te enviou uma Fake News que ela acredita fielmente ser
         verdade. Diante dessa situação, você deve mostrar para ela de forma
