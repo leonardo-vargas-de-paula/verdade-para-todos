@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { FontSizeProvider } from "./contexts/FontSizeContext";
 import { SoundProvider, useSound } from "./contexts/SoundContext";
+import { ManualProvider } from "./contexts/ManualContext";
 import { playClickSound } from "./utils/buttonSound";
 import RegistrarAcesso from "./components/RegistrarAcesso";
+import ManualModal from "./components/ManualModal";
 import ModuleHome from "./pages/Modulo1/Home";
 import SelecaoModulos from "./pages/SelecaoModulos";
 import BoasVindas from "./pages/BoasVindas";
@@ -60,38 +62,41 @@ function App() {
     <FontSizeProvider>
       <SoundProvider>
         <BrowserRouter>
-          <Analytics/>
-          <ScrollToTop />
-          <RegistrarAcesso />
-          <ButtonSoundFeedback />
-        <Routes>
-      <Route path="/" element={<BoasVindas />} />
-      <Route path="/modulos" element={<SelecaoModulos />} />
-      <Route path="/modulo/1" element={<ModuleHome />} />
-          <Route path="/modulo/2" element={<Modulo2Home />} />
-      <Route
-        path="/modulo/2/unidade/1"
-        element={<Modulo2Unidade1Pagina1 />}
-      />
-      <Route
-        path="/modulo/2/unidade/2"
-        element={<Modulo2Unidade2Pagina1 />}
-      />
-          <Route path="/unidade/1" element={<Unidade1 />} />
-          <Route path="/unidade/2" element={<Unidade2 />} />
-          <Route path="/unidade/3" element={<Unidade3Pagina1 />} />
-          <Route path="/unidade/3/2" element={<Unidade3Pagina2 />} />
-          <Route path="/unidade/4" element={<Unidade4 />} />
-          <Route path="/unidade/4/2" element={<Unidade4Pagina2 />} />
-          <Route path="/unidade/4/3" element={<Unidade4Pagina3 />} />
-          <Route path="/unidade/4/4" element={<Unidade4Pagina4 />} />
-          <Route
-            path="/unidade/3/3"
-            element={<Navigate to="/unidade/4" replace />}
-          />
-          <Route path="*" element={<BoasVindas />} />
-        </Routes>
-      </BrowserRouter>
+          <ManualProvider>
+            <Analytics />
+            <ScrollToTop />
+            <RegistrarAcesso />
+            <ButtonSoundFeedback />
+            <ManualModal />
+            <Routes>
+              <Route path="/" element={<BoasVindas />} />
+              <Route path="/modulos" element={<SelecaoModulos />} />
+              <Route path="/modulo/1" element={<ModuleHome />} />
+              <Route path="/modulo/2" element={<Modulo2Home />} />
+              <Route
+                path="/modulo/2/unidade/1"
+                element={<Modulo2Unidade1Pagina1 />}
+              />
+              <Route
+                path="/modulo/2/unidade/2"
+                element={<Modulo2Unidade2Pagina1 />}
+              />
+              <Route path="/unidade/1" element={<Unidade1 />} />
+              <Route path="/unidade/2" element={<Unidade2 />} />
+              <Route path="/unidade/3" element={<Unidade3Pagina1 />} />
+              <Route path="/unidade/3/2" element={<Unidade3Pagina2 />} />
+              <Route path="/unidade/4" element={<Unidade4 />} />
+              <Route path="/unidade/4/2" element={<Unidade4Pagina2 />} />
+              <Route path="/unidade/4/3" element={<Unidade4Pagina3 />} />
+              <Route path="/unidade/4/4" element={<Unidade4Pagina4 />} />
+              <Route
+                path="/unidade/3/3"
+                element={<Navigate to="/unidade/4" replace />}
+              />
+              <Route path="*" element={<BoasVindas />} />
+            </Routes>
+          </ManualProvider>
+        </BrowserRouter>
       </SoundProvider>
     </FontSizeProvider>
   );
