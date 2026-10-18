@@ -20,15 +20,9 @@ function Pagina1() {
   const completa = estaUnidadeCompleta(unidade.paginas, pathname);
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulo/1"
-          backLabel="Voltar ao Módulo 1"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
         kicker="Módulo 1 · Unidade 2 · Página 1 de 1"
         title="Os tipos de desinformação"
       />

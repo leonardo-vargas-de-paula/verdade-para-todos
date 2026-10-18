@@ -11,15 +11,9 @@ function ModuleHome() {
   useDocumentTitle("Módulo 1 — O que são Fake News");
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulos"
-          backLabel="Voltar aos módulos"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulos" backLabel="Voltar aos módulos" />}
         kicker={
           <>
             <SearchIcon />

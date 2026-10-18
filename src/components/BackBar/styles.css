@@ -1,15 +1,3 @@
-.back-bar {
-  background: var(--color-bg-alt);
-  border-bottom: 2px solid var(--color-border);
-}
-.back-bar .container {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
 .btn-back {
   display: inline-flex;
   align-items: center;

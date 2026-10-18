@@ -62,15 +62,9 @@ function Pagina1() {
   };
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulo/2"
-          backLabel="Voltar ao Módulo 2"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulo/2" backLabel="Voltar ao Módulo 2" />}
         kicker={
           concluido
             ? "Módulo 2 · Unidade 2 · Concluído"

@@ -10,15 +10,9 @@ function Pagina1() {
   useDocumentTitle("Unidade 3 — Como as Fake News são construídas");
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulo/1"
-          backLabel="Voltar ao Módulo 1"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
         kicker="Módulo 1 · Unidade 3 · Página 1 de 2"
         title="Como as Fake News são construídas"
       />

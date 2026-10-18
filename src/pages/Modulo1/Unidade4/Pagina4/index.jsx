@@ -22,15 +22,9 @@ function Pagina4() {
   const completa = estaUnidadeCompleta(unidade.paginas, pathname);
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulo/1"
-          backLabel="Voltar ao Módulo 1"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
         kicker="Módulo 1 · Unidade 4 · Página 4 de 4"
         title="Pesquise em agências de checagem"
       />

@@ -1,6 +1,21 @@
 .hero {
   padding: 40px 0 8px 0;
 }
+/* Linha do topo: botão de voltar à esquerda, kicker à direita,
+   separados do título por uma linha divisória fina. */
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: 18px;
+}
+.hero .hero-top .kicker {
+  margin-bottom: 0;
+}
 .hero .kicker {
   display: inline-flex;
   align-items: center;

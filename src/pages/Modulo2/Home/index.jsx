@@ -11,15 +11,9 @@ function Modulo2Home() {
   useDocumentTitle("Módulo 2 — Exercícios");
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulos"
-          backLabel="Voltar aos módulos"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulos" backLabel="Voltar aos módulos" />}
         kicker={
           <>
             <SearchIcon />

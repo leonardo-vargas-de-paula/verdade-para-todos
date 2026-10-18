@@ -10,15 +10,9 @@ function Pagina1() {
   useDocumentTitle("Unidade 4 — Como conferir antes de acreditar");
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulo/1"
-          backLabel="Voltar ao Módulo 1"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
         kicker="Módulo 1 · Unidade 4 · Página 1 de 4"
         title="Como conferir antes de acreditar"
       />

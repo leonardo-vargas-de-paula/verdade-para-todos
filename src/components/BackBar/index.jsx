@@ -8,7 +8,7 @@ import "./styles.css";
    Pergunta antes de navegar, para evitar sair sem querer.
    Funciona para o Módulo 1 e, no futuro, para quaisquer módulos
    (é só passar outro backTo/backLabel). A orientação de "onde estou"
-   é feita pelo kicker do Hero. */
+   é feita pelo kicker do Hero, que fica na mesma linha deste botão. */
 function BackBar({
   backTo = "/modulo/1",
   backLabel = "Voltar ao Módulo 1",
@@ -27,13 +27,11 @@ function BackBar({
   };
 
   return (
-    <div className="back-bar">
-      <div className="container">
-        <Link className="btn-back" to={backTo} onClick={handleBackClick}>
-          <ChevronLeftIcon />
-          {backLabel}
-        </Link>
-      </div>
+    <>
+      <Link className="btn-back" to={backTo} onClick={handleBackClick}>
+        <ChevronLeftIcon />
+        {backLabel}
+      </Link>
 
       <ConfirmDialog
         open={dialogOpen}
@@ -42,7 +40,7 @@ function BackBar({
         onConfirm={handleConfirm}
         onCancel={() => setDialogOpen(false)}
       />
-    </div>
+    </>
   );
 }
 

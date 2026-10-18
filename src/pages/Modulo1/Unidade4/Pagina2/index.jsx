@@ -10,15 +10,9 @@ function Pagina2() {
   useDocumentTitle("Unidade 4 · Página 2 — Identifique o gênero textual");
 
   return (
-    <Layout
-      backBar={
-        <BackBar
-          backTo="/modulo/1"
-          backLabel="Voltar ao Módulo 1"
-        />
-      }
-    >
+    <Layout>
       <Hero
+        back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
         kicker="Módulo 1 · Unidade 4 · Página 2 de 4"
         title="Identifique o gênero textual"
       />
