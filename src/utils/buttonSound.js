@@ -1,12 +1,43 @@
 /* Feedback sonoro suave ao pressionar botões/links.
    Gera um "clique" discreto pela Web Audio API — sem arquivos de áudio,
    sem rede e com volume baixo (gain 0.07). Falhar aqui nunca deve
-   quebrar a interface, por isso tudo fica em try/catch. */
+   quebrar a interface, por isso tudo fica em try/catch.
+
+   O som vale para todos os tamanhos de tela. O usuário pode silenciá-lo
+   pelo botão no cabeçalho (ver SoundContext); a preferência é guardada
+   no localStorage. */
 
 let audioContext = null;
 
 const VOLUME = 0.07;
 const DURATION = 0.12;
+
+const STORAGE_KEY = "soundMuted";
+
+/* Estado de mudo mantido no módulo para que o clique atual já respeite
+   a mudança — um clique em "silenciar" não toca, um em "ativar" confirma. */
+let soundMuted = false;
+
+if (typeof window !== "undefined") {
+  try {
+    soundMuted = window.localStorage.getItem(STORAGE_KEY) === "true";
+  } catch {
+    soundMuted = false;
+  }
+}
+
+export function isSoundMuted() {
+  return soundMuted;
+}
+
+export function setSoundMuted(muted) {
+  soundMuted = Boolean(muted);
+  try {
+    window.localStorage.setItem(STORAGE_KEY, String(soundMuted));
+  } catch {
+    /* sem localStorage — segue só em memória */
+  }
+}
 
 /* Reserva o AudioContext no primeiro gesto do usuário, para que o
    primeiro clique real já consiga tocar (política de autoplay). */
@@ -36,13 +67,9 @@ if (typeof window !== "undefined") {
   window.addEventListener("keydown", preparar, { once: true });
 }
 
-/* O som só toca em telas de celular (mesmo breakpoint responsivo do site).
-   Avaliado a cada clique, então acompanha a orientação do aparelho. */
-export function isMobileViewport() {
-  return window.matchMedia("(max-width: 640px)").matches;
-}
-
 export function playClickSound() {
+  if (soundMuted) return;
+
   try {
     const ctx = garantirAudioContext();
     if (!ctx) return;
