@@ -1,0 +1,198 @@
+/* Manual do curso — pop-up grande, alto contraste, alvos de toque grandes. */
+.manual-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 12, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 40;
+  overflow-y: auto;
+}
+
+.manual-card {
+  position: relative;
+  background: #fff;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  max-width: 620px;
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+.manual-card:focus {
+  outline: none;
+}
+
+/* Botão "Sair" (X) — terracota, no canto superior direito. */
+.manual-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: #fff;
+  border: 3px solid var(--color-accent-dark);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.manual-close:hover {
+  background: var(--color-accent-dark);
+}
+.manual-close-icon {
+  width: 30px;
+  height: 30px;
+}
+.manual-close-tip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--color-primary-dark);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+.manual-close:hover .manual-close-tip,
+.manual-close:focus-visible .manual-close-tip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Progresso: "Passo X de Y" + bolinhas (não depende só da cor). */
+.manual-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-right: calc(var(--tap-min) + 12px);
+}
+.manual-progress-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-size: var(--fs-sm);
+}
+.manual-dots {
+  display: flex;
+  gap: 10px;
+}
+.manual-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+}
+.manual-dot.feito {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.manual-dot.ativo {
+  background: var(--color-accent);
+  border-color: var(--color-accent-dark);
+}
+
+/* Conteúdo do passo. */
+.manual-step {
+  text-align: center;
+  margin: 18px 0 8px;
+}
+.manual-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+}
+.manual-icon svg {
+  width: 46px;
+  height: 46px;
+}
+.manual-titulo {
+  margin-bottom: 8px;
+}
+.manual-texto {
+  max-width: 48ch;
+  margin: 0 auto;
+}
+
+/* Ações. */
+.manual-actions {
+  display: flex;
+  gap: var(--tap-gap);
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.manual-btn {
+  flex: 1 1 180px;
+  min-height: var(--tap-min);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  cursor: pointer;
+  border: 3px solid;
+}
+.manual-btn.proximo {
+  background: var(--color-primary);
+  border-color: var(--color-primary-dark);
+  color: #fff;
+}
+.manual-btn.proximo:hover {
+  background: var(--color-primary-dark);
+}
+.manual-btn.voltar {
+  background: #fff;
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+.manual-btn.voltar:hover {
+  background: var(--color-bg-alt);
+}
+
+/* No celular o manual ocupa a tela toda. */
+@media (max-width: 640px) {
+  .manual-overlay {
+    padding: 0;
+    align-items: stretch;
+  }
+  .manual-card {
+    max-width: none;
+    max-height: none;
+    min-height: 100vh;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 88px 20px 40px;
+  }
+  .manual-actions {
+    gap: 16px;
+  }
+  .manual-btn {
+    flex-basis: 100%;
+  }
+  .manual-actions .manual-btn.proximo {
+    order: -1;
+  }
+}
