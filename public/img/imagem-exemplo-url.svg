@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" role="img" aria-label="Barra de endereço do navegador com a URL do curso">
+  <rect x="2" y="2" width="796" height="156" rx="14" fill="#FBF6EC" stroke="#D9C9A0" stroke-width="4"/>
+  <rect x="2" y="2" width="796" height="64" rx="14" fill="#F2E9D4"/>
+  <circle cx="44" cy="34" r="11" fill="#B9501E"/>
+  <circle cx="78" cy="34" r="11" fill="#D9C9A0"/>
+  <circle cx="112" cy="34" r="11" fill="#245C36"/>
+  <rect x="150" y="16" width="620" height="36" rx="18" fill="#FFFFFF" stroke="#0B5E67" stroke-width="3"/>
+  <text x="172" y="41" font-family="Arial, sans-serif" font-size="20" fill="#0c0c0c">https://verdade-para-todos.vercel.app</text>
+</svg>
