@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" role="img" aria-label="Parte superior do navegador com uma aba aberta chamada Unidade 4 e o botão de mais ao lado">
+  <rect x="2" y="2" width="796" height="156" rx="14" fill="#FBF6EC" stroke="#D9C9A0" stroke-width="4"/>
+  <rect x="2" y="2" width="796" height="64" rx="14" fill="#F2E9D4"/>
+  <circle cx="44" cy="34" r="11" fill="#B9501E"/>
+  <circle cx="78" cy="34" r="11" fill="#D9C9A0"/>
+  <circle cx="112" cy="34" r="11" fill="#245C36"/>
+
+  <rect x="150" y="12" width="230" height="44" rx="10" fill="#FFFFFF" stroke="#0B5E67" stroke-width="3"/>
+  <text x="265" y="41" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#0c0c0c">Unidade 4</text>
+
+  <text x="415" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#073F45">+</text>
+</svg>
