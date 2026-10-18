@@ -33,22 +33,30 @@ function Pagina3() {
               title: "Cuidado com a URL",
               text: (
                 <>
-                  A URL é o endereço de um site. Como por exemplo o site deste
-                  curso utiliza<br /> 
-                  <code className="url-chip">verdade-para-todos.vercel.app</code>
-                  {" "}
-                   e você pode conferir na porção superior da janela do navegador.
+                  A URL é o endereço completo de um site, e o domínio é o seu "nome".
+                  <br />
+                   <br />
+                  Como por exemplo o site deste
+                  curso possui a seguinte URL:
+                  <br /><code className="url-chip">https://verdade-para-todos.vercel.app</code>{" "}
+                  <br />
+                  <br />
+                  E o seu domínio é: 
+                  <br /><code className="url-chip">verdade-para-todos.vercel.app</code>
+                  <br />
+                  <br />
+                  Você pode conferir na porção superior da janela do navegador o domínio e a URL de um site. O trecho "https://" aparece após dois cliques na barra de endereço.
                 </>
               ),
               content: (
                 <>
                   <img
                     className="card-image"
-                    src="/img/exemplo-url.svg"
+                    src="/img/imagem-exemplo-url.svg"
                     alt="Barra de endereço do navegador mostrando a URL do curso: https://verdade-para-todos.vercel.app"
                   />
                   <p>
-                    Sites fraudulentos podem tentar imitar a URL de sites famosos, mas com pequenas alterações.
+                    Sites fraudulentos podem tentar imitar o domínio de sites famosos, mas com pequenas alterações.
                   </p>
                 </>
               ),
