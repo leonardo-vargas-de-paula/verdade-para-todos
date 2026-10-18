@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { FontSizeProvider } from "./contexts/FontSizeContext";
-import { playClickSound, isMobileViewport } from "./utils/buttonSound";
+import { SoundProvider, useSound } from "./contexts/SoundContext";
+import { playClickSound } from "./utils/buttonSound";
 import RegistrarAcesso from "./components/RegistrarAcesso";
 import ModuleHome from "./pages/Modulo1/Home";
 import SelecaoModulos from "./pages/SelecaoModulos";
@@ -31,13 +32,18 @@ function ScrollToTop() {
   return null;
 }
 
-/* Feedback sonoro suave ao pressionar botões/links — apenas em telas
-   de celular (≤640px), conforme isMobileViewport(). */
+/* Feedback sonoro suave ao pressionar botões/links — em todos os
+   tamanhos de tela. O som pode ser silenciado pelo botão no cabeçalho
+   (SoundContext); playClickSound() já respeita essa preferência. */
 function ButtonSoundFeedback() {
+  // Lê o contexto para reagir ao botão de mudo (o valor em si é checado
+  // dentro de playClickSound, de forma síncrona).
+  useSound();
+
   useEffect(() => {
     const handleClick = (event) => {
       const target = event.target.closest("a, button");
-      if (target && !target.disabled && isMobileViewport()) {
+      if (target && !target.disabled) {
         playClickSound();
       }
     };
@@ -52,11 +58,12 @@ function ButtonSoundFeedback() {
 function App() {
   return (
     <FontSizeProvider>
-      <BrowserRouter>
-        <Analytics/>
-        <ScrollToTop />
-        <RegistrarAcesso />
-        <ButtonSoundFeedback />
+      <SoundProvider>
+        <BrowserRouter>
+          <Analytics/>
+          <ScrollToTop />
+          <RegistrarAcesso />
+          <ButtonSoundFeedback />
         <Routes>
       <Route path="/" element={<BoasVindas />} />
       <Route path="/modulos" element={<SelecaoModulos />} />
@@ -85,6 +92,7 @@ function App() {
           <Route path="*" element={<BoasVindas />} />
         </Routes>
       </BrowserRouter>
+      </SoundProvider>
     </FontSizeProvider>
   );
 }

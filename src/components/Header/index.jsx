@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BrandIcon } from "../icons";
 import ConfirmDialog from "../ConfirmDialog";
+import SoundToggle from "../SoundToggle";
 // Desativado temporariamente — para reativar, descomentar:
 // import FontSizeControls from "../FontSizeControls";
 import "./styles.css";
@@ -33,11 +34,12 @@ function Header() {
           </span>
         </Link>
 
-        {/* Desativado temporariamente — para reativar, descomentar:
         <div className="a11y-controls">
+          <SoundToggle />
+          {/* Desativado temporariamente — para reativar, descomentar:
           <FontSizeControls />
+          */}
         </div>
-        */}
       </div>
 
       <ConfirmDialog

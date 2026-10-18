@@ -149,6 +149,56 @@ export function LockIcon(props) {
   );
 }
 
+export function SpeakerIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M4 9v6h4l5 4V5L8 9H4z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.5 8.5a5 5 0 0 1 0 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function SpeakerMutedIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M4 9v6h4l5 4V5L8 9H4z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <line
+        x1="16"
+        y1="9"
+        x2="21"
+        y2="15"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <line
+        x1="21"
+        y1="9"
+        x2="16"
+        y2="15"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function WarningIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
