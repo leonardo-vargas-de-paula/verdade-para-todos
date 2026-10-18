@@ -4,6 +4,8 @@ import Hero from "../../../components/Hero";
 import UnitCard from "../../../components/UnitCard";
 import { SearchIcon } from "../../../components/icons";
 import useDocumentTitle from "../../../utils/useDocumentTitle";
+import { UNIDADES_MODULO2 } from "../../../data/modulos";
+import { unidadeConcluida } from "../../../utils/progresso";
 
 function Modulo2Home() {
   useDocumentTitle("Módulo 2 — Exercícios");
@@ -30,16 +32,31 @@ function Modulo2Home() {
       />
 
       <ul className="unit-list">
-        <UnitCard
-          number="1"
-          title="Unidade 1 — Exercícios básicos"
-          to="/modulo/2/unidade/1"
-        />
-        <UnitCard
-          number="2"
-          title="Unidade 2 — Exercícios de análise"
-          to="/modulo/2/unidade/2"
-        />
+        {UNIDADES_MODULO2.map((unidade, indice) => {
+          const concluida = unidadeConcluida(unidade.to);
+          /* cadeia: só libera se todas as unidades anteriores terminadas */
+          const bloqueada =
+            indice > 0 &&
+            !UNIDADES_MODULO2.slice(0, indice).every((anterior) =>
+              unidadeConcluida(anterior.to)
+            );
+          const primeiraIncompleta = UNIDADES_MODULO2.slice(0, indice).find(
+            (anterior) => !unidadeConcluida(anterior.to)
+          );
+
+          return (
+            <UnitCard
+              key={unidade.number}
+              number={unidade.number}
+              title={unidade.title}
+              to={unidade.to}
+              concluida={concluida}
+              bloqueada={bloqueada}
+              anteriorTo={primeiraIncompleta?.to}
+              anteriorTitulo={primeiraIncompleta?.title}
+            />
+          );
+        })}
       </ul>
     </Layout>
   );
