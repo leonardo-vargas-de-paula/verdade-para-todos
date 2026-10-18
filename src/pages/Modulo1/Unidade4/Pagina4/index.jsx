@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import Layout from "../../../../components/Layout";
 import BackBar from "../../../../components/BackBar";
 import Hero from "../../../../components/Hero";
@@ -7,25 +6,17 @@ import UnitNav from "../../../../components/UnitNav";
 import IconList from "../../../../components/IconList";
 import useDocumentTitle from "../../../../utils/useDocumentTitle";
 import Callout from "../../../../components/Callout";
-import { UNIDADES_MODULO1 } from "../../../../data/modulos";
-import {
-  estaUnidadeCompleta,
-  primeiraPaginaNaoLida,
-} from "../../../../utils/progresso";
 
 function Pagina4() {
   useDocumentTitle(
     "Unidade 4 · Página 4 — Pesquise em agências de checagem"
   );
-  const { pathname } = useLocation();
-  const unidade = UNIDADES_MODULO1.find((u) => u.to === "/unidade/4");
-  const completa = estaUnidadeCompleta(unidade.paginas, pathname);
 
   return (
     <Layout>
       <Hero
         back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
-        kicker="Módulo 1 · Unidade 4 · Página 4 de 4"
+        kicker="Módulo 1 · Unidade 4 · Página 4 de 5"
         title="Pesquise em agências de checagem"
       />
 
@@ -84,15 +75,9 @@ function Pagina4() {
           title: "Cuidado com a URL",
         }}
         next={{
-          to: "/modulos",
-          label: "Próximo módulo ▸",
-          title: "Escolha um módulo",
-          ...(completa
-            ? {}
-            : {
-                bloqueado: true,
-                paginaFaltante: primeiraPaginaNaoLida(unidade.paginas, pathname),
-              }),
+          to: "/unidade/4/5",
+          label: "Próxima página ▸",
+          title: "Leitura lateral",
         }}
       />
     </Layout>

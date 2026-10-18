@@ -24,7 +24,7 @@ export const UNIDADES_MODULO1 = [
     number: "4",
     title: "Unidade 4 — Como conferir antes de acreditar",
     to: "/unidade/4",
-    paginas: ["/unidade/4", "/unidade/4/2", "/unidade/4/3", "/unidade/4/4"],
+    paginas: ["/unidade/4", "/unidade/4/2", "/unidade/4/3", "/unidade/4/4", "/unidade/4/5"],
   },
 ];
 
