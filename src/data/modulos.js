@@ -43,6 +43,6 @@ export const UNIDADES_MODULO2 = [
     number: "2",
     title: "Unidade 2 — Exercícios de análise",
     to: "/modulo/2/unidade/2",
-    paginas: ["/modulo/2/unidade/2"],
+    paginas: ["/modulo/2/unidade/2", "/modulo/2/unidade/2/2"],
   },
 ];
