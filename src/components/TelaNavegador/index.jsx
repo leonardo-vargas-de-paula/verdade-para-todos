@@ -7,6 +7,7 @@ function TelaNavegador({
   url,
   titulo,
   texto,
+  publicadoEm,
   legenda = "Simulação de tela de navegador — informações fictícias",
   children,
 }) {
@@ -34,6 +35,11 @@ function TelaNavegador({
             <article className="tela-navegador__noticia">
               {titulo && <h3>{titulo}</h3>}
               {texto && <p>{texto}</p>}
+              {publicadoEm && (
+                <p className="tela-navegador__data">
+                  Publicado em: {publicadoEm}
+                </p>
+              )}
             </article>
           )}
         </div>

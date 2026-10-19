@@ -81,6 +81,12 @@
   line-height: 1.6;
 }
 
+.tela-navegador__noticia .tela-navegador__data {
+  margin-top: 16px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
 /* texto apenas para leitores de tela */
 .tela-navegador__oculto {
   position: absolute;
