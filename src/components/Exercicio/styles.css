@@ -1,6 +1,6 @@
-/* enunciado do exercício em preto (demais section-cards mantêm o verde-escuro) */
-.exercicio-card h2 {
-  color: var(--color-text);
+/* enunciado do exercício como texto normal (sem a tag de título h2) */
+.exercise-enunciado {
+  margin-bottom: 0;
 }
 
 /* explicação do exercício — parágrafo próprio abaixo do feedback,

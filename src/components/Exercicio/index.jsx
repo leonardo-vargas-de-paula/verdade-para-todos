@@ -30,7 +30,8 @@ function Exercicio({
 
   return (
     <>
-      <SectionCard title={enunciado} className="exercicio-card">
+      <SectionCard className="exercicio-card">
+        <p className="exercise-enunciado">{enunciado}</p>
         <div className="alternatives" role="group" aria-label="Alternativas">
           {alternativas.map((alternativa, index) => {
             let className = "alternative";
