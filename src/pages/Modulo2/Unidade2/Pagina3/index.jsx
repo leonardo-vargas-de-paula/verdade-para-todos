@@ -35,7 +35,7 @@ const EXERCICIO = {
   ],
   corretas: [0, 1],
   explicacao:
-    "O título começa com \"Desnotícia\" e o nome do médico é uma piada, sinais de que o texto é uma sátira. Mesmo assim, o endereço www.anvisa.govi.rb imita o site oficial da Anvisa, mas não é o dele. Conteúdo de humor pode enganar quando é compartilhado sem contexto — por isso, confira sempre nos canais oficiais antes de acreditar ou repassar.",
+    "O título começa com \"Desnotícia\" e o nome do médico parece uma piada, sinais de que o texto é uma sátira. Além disso, o nome do site é piadas.org, que é um forte indicativo de que não se trata de uma notícia real.",
 };
 
 function Pagina3() {
