@@ -1,0 +1,179 @@
+/* Exercício de análise em formato de checklist. Os seletores são
+   escopados em .exercicio-checklist para não interferirem no componente
+   Exercicio (múltipla escolha) nem em outros usos de .alternative. */
+
+.exercicio-checklist .checklist-instrucao {
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+}
+
+.exercicio-checklist .alternatives {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tap-gap);
+  margin-top: 18px;
+}
+
+.exercicio-checklist .alternative {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 14px 18px;
+  background: #fff;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.exercicio-checklist .alternative:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+.exercicio-checklist .alternative .letter {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+}
+
+.exercicio-checklist .alternative-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+/* caixa de seleção à direita — quadrado que vira "marcado" quando ativo */
+.exercicio-checklist .checkbox {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+}
+.exercicio-checklist .checkbox-icon {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+}
+
+/* alternativa marcada durante a resposta (ainda sem gabarito) */
+.exercicio-checklist .alternative.selected {
+  border-color: var(--color-primary);
+}
+.exercicio-checklist .alternative.selected .checkbox {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* gabarito: cor + ícone + a palavra escrita (nunca só a cor) */
+.exercicio-checklist .alternative.correct {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+.exercicio-checklist .alternative.correct .letter,
+.exercicio-checklist .alternative.correct .checkbox {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.exercicio-checklist .alternative.wrong {
+  border-color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+.exercicio-checklist .alternative.wrong .letter,
+.exercicio-checklist .alternative.wrong .checkbox {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+/* correta que o usuário não marcou — destaque próprio, diferente de acerto */
+.exercicio-checklist .alternative.missed {
+  border-color: var(--color-success);
+  border-style: dashed;
+  background: #fff;
+}
+.exercicio-checklist .alternative.missed .checkbox {
+  background: #fff;
+  border-color: var(--color-success);
+}
+.exercicio-checklist .alternative.missed .checkbox-icon {
+  color: var(--color-success);
+}
+
+.exercicio-checklist .alternative .alt-status {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+.exercicio-checklist .alternative.correct .alt-status,
+.exercicio-checklist .alternative.missed .alt-status {
+  color: var(--color-success);
+}
+.exercicio-checklist .alternative.wrong .alt-status {
+  color: var(--color-danger);
+}
+
+.exercicio-checklist .alternative:disabled {
+  cursor: default;
+}
+
+.exercicio-checklist .exercise-actions {
+  margin-top: var(--tap-gap);
+}
+.exercicio-checklist .btn-next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: 0 26px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  cursor: pointer;
+}
+.exercicio-checklist .btn-next:hover:not(:disabled) {
+  background: var(--color-bg-alt);
+}
+.exercicio-checklist .btn-next:disabled {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* explicação abaixo do feedback, no mesmo tom do componente Exercicio */
+.exercicio-checklist .exercise-explicacao {
+  margin-top: 18px;
+  padding: 20px 22px;
+  background: var(--color-bg-alt);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+}
