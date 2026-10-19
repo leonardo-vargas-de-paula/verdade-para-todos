@@ -22,6 +22,7 @@ import Modulo2Home from "./pages/Modulo2/Home";
 import Modulo2Unidade1Pagina1 from "./pages/Modulo2/Unidade1/Pagina1";
 import Modulo2Unidade2Pagina1 from "./pages/Modulo2/Unidade2/Pagina1";
 import Modulo2Unidade2Pagina2 from "./pages/Modulo2/Unidade2/Pagina2";
+import Modulo2Unidade2Pagina3 from "./pages/Modulo2/Unidade2/Pagina3";
 import { Analytics } from "@vercel/analytics/react";
 
 /* Ao mudar de página, volta ao topo — como acontecia com a troca
@@ -86,6 +87,10 @@ function App() {
               <Route
                 path="/modulo/2/unidade/2/2"
                 element={<Modulo2Unidade2Pagina2 />}
+              />
+              <Route
+                path="/modulo/2/unidade/2/3"
+                element={<Modulo2Unidade2Pagina3 />}
               />
               <Route path="/unidade/1" element={<Unidade1 />} />
               <Route path="/unidade/2" element={<Unidade2 />} />

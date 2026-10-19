@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SectionCard from "../SectionCard";
 import Callout from "../Callout";
+import TelaNavegador from "../TelaNavegador";
 import { CheckIcon } from "../icons";
 import "./styles.css";
 
@@ -13,6 +14,7 @@ const LETTERS = ["A", "B", "C", "D", "E", "F"];
    errou tudo — sempre com ícone + texto além da cor. */
 function ExercicioChecklist({
   enunciado,
+  noticia,
   alternativas,
   corretas = [],
   explicacao,
@@ -91,6 +93,7 @@ function ExercicioChecklist({
     <div className="exercicio-checklist">
       <SectionCard className="exercicio-card">
         <p className="exercise-enunciado">{enunciado}</p>
+        {noticia && <TelaNavegador {...noticia} />}
         <p className="checklist-instrucao">
           Marque todas as alternativas que você considera corretas. Pode haver
           mais de uma.
