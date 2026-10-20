@@ -1,0 +1,128 @@
+/* Moldura de postagem em rede social usada nos exercícios de análise.
+   Cores neutras, texto grande e nenhum botão falso de curtir/compartilhar. */
+
+.postagem-rede {
+  margin: 20px 0 0;
+}
+
+.postagem-rede__legenda {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.postagem-rede__cartao {
+  padding: 20px;
+  background: #fff;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.postagem-rede__cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.postagem-rede__avatar {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+}
+.postagem-rede__avatar-icone {
+  width: 34px;
+  height: 34px;
+  color: var(--color-primary-dark);
+}
+
+.postagem-rede__autor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.postagem-rede__nome {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.postagem-rede__horario {
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
+.postagem-rede__perfil {
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
+.postagem-rede__texto {
+  max-width: none;
+  margin: 16px 0 0;
+  color: var(--color-text);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.postagem-rede__imagem-arquivo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.postagem-rede__imagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 200px;
+  margin-top: 16px;
+  padding: 24px;
+  background: var(--color-bg-alt);
+  border: 2px dashed var(--color-border);
+  border-radius: 10px;
+}
+
+.postagem-rede__imagem-icone {
+  width: 56px;
+  height: 56px;
+  color: var(--color-primary-dark);
+}
+
+.postagem-rede__imagem-texto {
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-align: center;
+}
+
+.postagem-rede__imagem-legenda {
+  max-width: none;
+  margin: 10px 0 0;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}

@@ -43,7 +43,7 @@ function Pagina1() {
             },
             {
               title: "Marque uma ou mais alternativas",
-              text: "Toque nas alternativas que você considera corretas. Pode marcar quantas quiser — não existe apenas uma resposta certa.",
+              text: "Toque ou clique nas alternativas que você considera corretas. Pode marcar quantas quiser — não existe apenas uma resposta certa.",
             },
             {
               title: "Confirme para ver o resultado",
