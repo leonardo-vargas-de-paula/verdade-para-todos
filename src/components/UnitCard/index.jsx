@@ -25,7 +25,7 @@ function UnitCard({
   const textos =
     tipo === "modulo"
       ? {
-          hint: "Termine o Módulo 1 para liberar",
+          hint: "Termine o módulo anterior para liberar",
           dialogoTitulo: "Módulo ainda não liberado",
           dialogoMensagem: anteriorTitulo
             ? `Termine o módulo "${anteriorTitulo}" para continuar.`
