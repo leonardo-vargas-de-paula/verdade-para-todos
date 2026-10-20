@@ -29,12 +29,12 @@ function Pagina3() {
                   A URL é o endereço completo de um site, e o domínio é o seu "nome".
                   <br />
                    <br />
-                  Como por exemplo o site deste
+                  Por exemplo, o site deste
                   curso possui a seguinte URL:
                   <br /><code className="url-chip">https://verdade-para-todos.vercel.app</code>{" "}
                   <br />
                   <br />
-                  E o seu domínio é: 
+                  E o seu domínio é:
                   <br /><code className="url-chip">verdade-para-todos.vercel.app</code>
                   <br />
                   <br />

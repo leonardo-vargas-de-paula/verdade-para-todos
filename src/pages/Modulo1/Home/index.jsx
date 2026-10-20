@@ -25,7 +25,7 @@ function ModuleHome() {
           <>
             Neste módulo você vai aprender, com calma e passo a passo, o que são
             as notícias falsas e por que elas enganam tanta gente. Nosso foco
-            será em Fake News através de textos.
+            será em Fake News por meio de textos.
           </>
         }
       />
