@@ -34,7 +34,7 @@ function Pagina4() {
     <Layout>
       <Hero
         back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
-        kicker="Módulo 1 · Unidade 4 · Página 4 de 5"
+        kicker="Módulo 1 · Unidade 4 · Página 4 de 6"
         title="Pesquise em agências de checagem"
       />
 
@@ -109,7 +109,7 @@ function Pagina4() {
         next={{
           to: "/unidade/4/5",
           label: "Próxima página ▸",
-          title: "Leitura lateral",
+          title: "Verifique as datas",
         }}
       />
 

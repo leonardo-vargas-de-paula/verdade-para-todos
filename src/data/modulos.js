@@ -24,7 +24,7 @@ export const UNIDADES_MODULO1 = [
     number: "4",
     title: "Unidade 4 — Como conferir antes de acreditar",
     to: "/unidade/4",
-    paginas: ["/unidade/4", "/unidade/4/2", "/unidade/4/3", "/unidade/4/4", "/unidade/4/5"],
+    paginas: ["/unidade/4", "/unidade/4/2", "/unidade/4/3", "/unidade/4/4", "/unidade/4/5", "/unidade/4/6"],
   },
 ];
 
@@ -53,3 +53,12 @@ export const UNIDADES_MODULO2 = [
     ],
   },
 ];
+
+/* Módulo 3 — Considerações Finais: página única de encerramento.
+   Vale como concluída quando a página for visitada. */
+export const MODULO3 = {
+  number: "3",
+  title: "Módulo 3 — Considerações Finais",
+  to: "/modulo/3",
+  paginas: ["/modulo/3"],
+};
