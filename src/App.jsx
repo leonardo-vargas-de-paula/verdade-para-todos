@@ -18,6 +18,7 @@ import Unidade4Pagina2 from "./pages/Modulo1/Unidade4/Pagina2";
 import Unidade4Pagina3 from "./pages/Modulo1/Unidade4/Pagina3";
 import Unidade4Pagina4 from "./pages/Modulo1/Unidade4/Pagina4";
 import Unidade4Pagina5 from "./pages/Modulo1/Unidade4/Pagina5";
+import Unidade4Pagina6 from "./pages/Modulo1/Unidade4/Pagina6";
 import Modulo2Home from "./pages/Modulo2/Home";
 import Modulo2Unidade1Pagina1 from "./pages/Modulo2/Unidade1/Pagina1";
 import Modulo2Unidade2Pagina1 from "./pages/Modulo2/Unidade2/Pagina1";
@@ -116,6 +117,7 @@ function App() {
               <Route path="/unidade/4/3" element={<Unidade4Pagina3 />} />
               <Route path="/unidade/4/4" element={<Unidade4Pagina4 />} />
               <Route path="/unidade/4/5" element={<Unidade4Pagina5 />} />
+              <Route path="/unidade/4/6" element={<Unidade4Pagina6 />} />
               <Route
                 path="/unidade/3/3"
                 element={<Navigate to="/unidade/4" replace />}
