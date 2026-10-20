@@ -67,6 +67,12 @@
   line-height: 1.4;
 }
 
+.postagem-rede__perfil {
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
 .postagem-rede__texto {
   max-width: none;
   margin: 16px 0 0;
@@ -74,6 +80,7 @@
   font-size: var(--fs-base);
   line-height: 1.6;
   white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 .postagem-rede__imagem-arquivo {

@@ -6,6 +6,7 @@ import "./styles.css";
    escalável); só a moldura imita a interface de uma rede social. */
 function PostagemRedeSocial({
   nome,
+  perfil,
   horario = "há 2 horas",
   texto,
   imagemSrc,
@@ -24,6 +25,9 @@ function PostagemRedeSocial({
           </span>
           <span className="postagem-rede__autor">
             <span className="postagem-rede__nome">{nome}</span>
+            {perfil && (
+              <span className="postagem-rede__perfil">{perfil}</span>
+            )}
             <span className="postagem-rede__horario">{horario}</span>
           </span>
         </header>

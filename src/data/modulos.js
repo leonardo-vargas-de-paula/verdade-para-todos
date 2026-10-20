@@ -49,6 +49,7 @@ export const UNIDADES_MODULO2 = [
       "/modulo/2/unidade/2/3",
       "/modulo/2/unidade/2/4",
       "/modulo/2/unidade/2/5",
+      "/modulo/2/unidade/2/6",
     ],
   },
 ];
