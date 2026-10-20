@@ -29,13 +29,14 @@ function Pagina1() {
       <SectionCard title="Definição">
         <p>
           <strong>Fake news </strong>é uma expressão em inglês que quer dizer{" "}
-          <strong>"notícia falsa"</strong> . É uma informação inventada ou
-          deturpada, criada para parecer uma informação verdadeira.
+          <strong>"notícia falsa"</strong>. É uma informação inventada ou
+          deturpada, criada para parecer uma informação verdadeira e enganar.
         </p>
         <p>
           Pesquisadores da área apontam que o termo mais adequado seria{" "}
-          <strong>desinformação</strong>, mas o termo{" "}
-          <strong>fake news</strong> se popularizou e é o mais utilizado.
+          <strong>desinformação</strong>, por considerar <strong>Fake news </strong> uma expressão
+          insuficiente para descrever o fenômeno. Nesse curso usaremos o termo
+          <strong> Fake News</strong>, mas vamos explicar posteriormente o que é desinformação e como ela se relaciona com as notícias falsas.
         </p>
       </SectionCard>
 
@@ -63,7 +64,7 @@ function Pagina1() {
         next={{
           to: "/unidade/2",
           label: "Próxima unidade ▸",
-          title: "Os tipos de notícia falsa",
+          title: "Os tipos de desinformação",
           ...(completa
             ? {}
             : {

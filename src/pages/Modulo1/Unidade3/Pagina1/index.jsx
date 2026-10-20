@@ -7,14 +7,14 @@ import UnitNav from "../../../../components/UnitNav";
 import useDocumentTitle from "../../../../utils/useDocumentTitle";
 
 function Pagina1() {
-  useDocumentTitle("Unidade 3 — Como as Fake News são construídas");
+  useDocumentTitle("Unidade 3 — Características comuns das Fake News");
 
   return (
     <Layout>
       <Hero
         back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
         kicker="Módulo 1 · Unidade 3 · Página 1 de 2"
-        title="Como as Fake News são construídas"
+        title="Características comuns das Fake News"
       />
 
       <SectionCard>
@@ -36,7 +36,7 @@ function Pagina1() {
         prev={{
           to: "/unidade/2",
           label: "◂ Unidade anterior",
-          title: "Os tipos de notícia falsa",
+          title: "Os tipos de desinformação",
         }}
         next={{
           to: "/unidade/3/2",

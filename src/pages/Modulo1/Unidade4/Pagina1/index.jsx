@@ -45,7 +45,7 @@ function Pagina1() {
         prev={{
           to: "/unidade/3/2",
           label: "◂ Unidade anterior",
-          title: "Como as Fake News são construídas",
+          title: "Características comuns das Fake News",
         }}
         next={{
           to: "/unidade/4/2",

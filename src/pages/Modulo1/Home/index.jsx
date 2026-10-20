@@ -8,7 +8,7 @@ import { UNIDADES_MODULO1 } from "../../../data/modulos";
 import { estaUnidadeCompleta } from "../../../utils/progresso";
 
 function ModuleHome() {
-  useDocumentTitle("Módulo 1 — O que são Fake News");
+  useDocumentTitle("Módulo 1 — Fake News: Aspectos Básicos");
 
   return (
     <Layout>
@@ -20,7 +20,7 @@ function ModuleHome() {
             Módulo 1
           </>
         }
-        title="O que são as Fake News?"
+        title="Fake News: Aspectos Básicos"
         lead={
           <>
             Neste módulo você vai aprender, com calma e passo a passo, o que são

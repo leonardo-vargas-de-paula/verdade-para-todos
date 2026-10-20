@@ -10,13 +10,13 @@ export const UNIDADES_MODULO1 = [
   },
   {
     number: "2",
-    title: "Unidade 2 — Os tipos de notícia falsa",
+    title: "Unidade 2 — Os tipos de desinformação",
     to: "/unidade/2",
     paginas: ["/unidade/2"],
   },
   {
     number: "3",
-    title: "Unidade 3 — Como as Fake News são construídas",
+    title: "Unidade 3 — Características comuns das Fake News",
     to: "/unidade/3",
     paginas: ["/unidade/3", "/unidade/3/2"],
   },
