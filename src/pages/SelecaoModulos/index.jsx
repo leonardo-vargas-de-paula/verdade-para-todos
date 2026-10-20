@@ -2,14 +2,20 @@ import Layout from "../../components/Layout";
 import Hero from "../../components/Hero";
 import UnitCard from "../../components/UnitCard";
 import useDocumentTitle from "../../utils/useDocumentTitle";
-import { modulo1Completo, modulo2Completo } from "../../utils/progresso";
+import { MODULO3 } from "../../data/modulos";
+import {
+  modulo1Completo,
+  modulo2Completo,
+  modulo3Completo,
+} from "../../utils/progresso";
 
 /* Seleção de módulos — entre as boas-vindas e o conteúdo.
-   O Módulo 2 só libera quando o Módulo 1 for lido por completo. */
+   Cada módulo só libera quando o anterior for concluído por completo. */
 function SelecaoModulos() {
   useDocumentTitle("Escolha um módulo");
   const modulo1Lido = modulo1Completo();
   const modulo2Lido = modulo2Completo();
+  const modulo3Lido = modulo3Completo();
 
   return (
     <Layout>
@@ -35,6 +41,16 @@ function SelecaoModulos() {
           bloqueada={!modulo1Lido}
           anteriorTo="/modulo/1"
           anteriorTitulo="Módulo 1 — Fake News: Aspectos Básicos"
+        />
+        <UnitCard
+          number={MODULO3.number}
+          title={MODULO3.title}
+          to={MODULO3.to}
+          tipo="modulo"
+          concluida={modulo3Lido}
+          bloqueada={!modulo2Lido}
+          anteriorTo="/modulo/2"
+          anteriorTitulo="Módulo 2 — Exercícios"
         />
       </ul>
     </Layout>

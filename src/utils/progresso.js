@@ -2,7 +2,11 @@
    Guarda a lista de rotas já visitadas — hoje só gravamos;
    o uso visual (selos, etc.) pode consumir lerVisitados() depois. */
 
-import { UNIDADES_MODULO1, UNIDADES_MODULO2 } from "../data/modulos";
+import {
+  MODULO3,
+  UNIDADES_MODULO1,
+  UNIDADES_MODULO2,
+} from "../data/modulos";
 
 const CHAVE = "vpt:visitados";
 const CHAVE_CONCLUIDAS = "vpt:unidades-concluidas";
@@ -95,6 +99,11 @@ export function unidadeConcluida(rota) {
 /* Módulo 2 concluído: todas as unidades de exercícios terminadas. */
 export function modulo2Completo() {
   return UNIDADES_MODULO2.every((unidade) => unidadeConcluida(unidade.to));
+}
+
+/* Módulo 3 concluído: a página final já foi visitada. */
+export function modulo3Completo() {
+  return estaUnidadeCompleta(MODULO3.paginas);
 }
 
 /* Normaliza a rota removendo a barra final (exceto na raiz). */
