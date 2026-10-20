@@ -8,6 +8,7 @@ function PostagemRedeSocial({
   nome,
   horario = "há 2 horas",
   texto,
+  imagemSrc,
   imagemDescricao,
   imagemLegenda,
   legenda = "Simulação de postagem em rede social — conteúdo fictício",
@@ -29,7 +30,15 @@ function PostagemRedeSocial({
 
         <p className="postagem-rede__texto">{texto}</p>
 
-        {imagemDescricao && (
+        {imagemSrc ? (
+          <img
+            className="postagem-rede__imagem-arquivo"
+            src={imagemSrc}
+            alt={imagemDescricao || ""}
+            loading="lazy"
+            decoding="async"
+          />
+        ) : imagemDescricao ? (
           <div
             className="postagem-rede__imagem"
             role="img"
@@ -40,7 +49,7 @@ function PostagemRedeSocial({
               Espaço para imagem
             </span>
           </div>
-        )}
+        ) : null}
 
         {imagemLegenda && (
           <p className="postagem-rede__imagem-legenda">{imagemLegenda}</p>

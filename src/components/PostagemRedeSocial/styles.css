@@ -76,6 +76,15 @@
   white-space: pre-line;
 }
 
+.postagem-rede__imagem-arquivo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+}
+
 .postagem-rede__imagem {
   display: flex;
   flex-direction: column;

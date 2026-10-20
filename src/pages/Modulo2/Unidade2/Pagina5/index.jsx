@@ -24,21 +24,21 @@ const EXERCICIO = {
     nome: "Maria de Lourdes",
     horario: "há 2 horas",
     texto:
-      "URGENTE! Acabei de saber por um vizinho que trabalha na Sabesp: a água da torneira está contaminada e não pode ser bebida pelas próximas 72 horas. Ele disse que é melhor correr e comprar água mineral. Espalhem para todos os grupos, é sério!",
+      "URGENTE! Acabei de saber por um vizinho que trabalha na prefeitura: a água da torneira está contaminada e não pode ser bebida pelas próximas 72 horas. Ele disse que é melhor correr e comprar água mineral. Espalhem para todos os grupos, é sério!",
+    imagemSrc: "/img/imagem-exemplo-fila-agua.webp",
     imagemDescricao:
-      "Fila de pessoas com carrinhos cheios de água mineral em um supermercado.",
+      "Ilustração de uma fila de pessoas com carrinhos cheios de galões de água mineral em um supermercado.",
     imagemLegenda: "Imagem: fila em um supermercado.",
   },
   alternativas: [
     "Desconfiar do tom de urgência e do pedido para espalhar para todos.",
-    "Verificar se a prefeitura e a Sabesp publicaram algum aviso oficial.",
-    "Questionar a fonte anônima citada na postagem.",
+    "Verificar se a prefeitura publicou algum aviso oficial.",
     "Repassar imediatamente, porque a mensagem pede urgência.",
-    "Confiar na foto, pois uma imagem sempre comprova o que o texto diz.",
+    "Questionar a fonte anônima citada na postagem.",
   ],
-  corretas: [0, 1, 2],
+  corretas: [0, 1, 3],
   explicacao:
-    "O tom de urgência, o pedido para espalhar e a fonte anônima são sinais de alerta. A foto não mostra data, local nem origem, e pode ser de outra situação. Antes de compartilhar, procure um comunicado oficial da prefeitura ou da Sabesp e confira a informação em mais de um canal.",
+    "O tom de urgência, o pedido para espalhar e a fonte anônima são sinais de alerta. A foto não mostra data, local nem origem, e pode ser de outra situação.",
 };
 
 function Pagina5() {
