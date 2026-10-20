@@ -28,7 +28,8 @@ function Pagina1() {
       />
 
       <SectionCard title="Nem toda informação errada é igual">
-        <p>É útil conhecer as formas mais comuns que uma notícia falsa pode assumir:</p>
+        <p>É útil conhecer as formas mais comuns que uma notícia falsa pode assumir. Baseado nisso existe o modelo da "Desordem Informacional", que separa 
+           os conteúdos baseado na veracidade e na intencionalidade de enganar:</p>
         <IconList
           items={[
             {
@@ -61,7 +62,7 @@ function Pagina1() {
         next={{
           to: "/unidade/3",
           label: "Próxima unidade ▸",
-          title: "Como as Fake News são construídas",
+          title: "Características comuns das Fake News",
           ...(completa
             ? {}
             : {

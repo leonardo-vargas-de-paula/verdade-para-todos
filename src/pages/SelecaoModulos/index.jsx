@@ -22,7 +22,7 @@ function SelecaoModulos() {
       <ul className="unit-list">
         <UnitCard
           number="1"
-          title="Módulo 1 — O que são as Fake News?"
+          title="Módulo 1 — Fake News: Aspectos Básicos"
           to="/modulo/1"
           concluida={modulo1Lido}
         />
@@ -34,7 +34,7 @@ function SelecaoModulos() {
           concluida={modulo2Lido}
           bloqueada={!modulo1Lido}
           anteriorTo="/modulo/1"
-          anteriorTitulo="Módulo 1 — O que são as Fake News?"
+          anteriorTitulo="Módulo 1 — Fake News: Aspectos Básicos"
         />
       </ul>
     </Layout>
