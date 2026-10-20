@@ -15,7 +15,7 @@ function Pagina3() {
     <Layout>
       <Hero
         back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
-        kicker="Módulo 1 · Unidade 4 · Página 3 de 5"
+        kicker="Módulo 1 · Unidade 4 · Página 3 de 6"
         title="Cuidado com a URL"
       />
 

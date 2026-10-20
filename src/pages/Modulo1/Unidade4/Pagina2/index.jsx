@@ -13,7 +13,7 @@ function Pagina2() {
     <Layout>
       <Hero
         back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
-        kicker="Módulo 1 · Unidade 4 · Página 2 de 5"
+        kicker="Módulo 1 · Unidade 4 · Página 2 de 6"
         title="Identifique o gênero textual"
       />
 
