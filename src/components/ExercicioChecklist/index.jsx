@@ -2,6 +2,7 @@ import { useState } from "react";
 import SectionCard from "../SectionCard";
 import Callout from "../Callout";
 import TelaNavegador from "../TelaNavegador";
+import PostagemRedeSocial from "../PostagemRedeSocial";
 import { CheckIcon } from "../icons";
 import "./styles.css";
 
@@ -15,6 +16,7 @@ const LETTERS = ["A", "B", "C", "D", "E", "F"];
 function ExercicioChecklist({
   enunciado,
   noticia,
+  postagem,
   alternativas,
   corretas = [],
   explicacao,
@@ -94,6 +96,7 @@ function ExercicioChecklist({
       <SectionCard className="exercicio-card">
         <p className="exercise-enunciado">{enunciado}</p>
         {noticia && <TelaNavegador {...noticia} />}
+        {postagem && <PostagemRedeSocial {...postagem} />}
         <p className="checklist-instrucao">
           Marque todas as alternativas que você considera corretas. Pode haver
           mais de uma.

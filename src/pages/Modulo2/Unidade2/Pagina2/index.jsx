@@ -6,7 +6,7 @@ import ExercicioChecklist from "../../../../components/ExercicioChecklist";
 import useDocumentTitle from "../../../../utils/useDocumentTitle";
 import { registrarResultado } from "../../../../utils/resultadosExercicios";
 
-/* Exercícios de análise — Módulo 2, Unidade 2, Exercício 1 de 3.
+/* Exercícios de análise — Módulo 2, Unidade 2, Exercício 1 de 4.
    Formato "checklist": pode haver mais de uma alternativa correta. */
 const CHAVE_RESULTADOS = "vpt:modulo2:unidade2";
 const EXERCICIO = {
@@ -31,7 +31,7 @@ const EXERCICIO = {
 };
 
 function Pagina2() {
-  useDocumentTitle("Módulo 2 · Unidade 2 — Exercício 1 de 3");
+  useDocumentTitle("Módulo 2 · Unidade 2 — Exercício 1 de 4");
   const navigate = useNavigate();
 
   const handleProximo = () => {
@@ -42,7 +42,7 @@ function Pagina2() {
     <Layout>
       <Hero
         back={<BackBar backTo="/modulo/2" backLabel="Voltar ao Módulo 2" />}
-        kicker="Módulo 2 · Unidade 2 · Exercício 1 de 3"
+        kicker="Módulo 2 · Unidade 2 · Exercício 1 de 4"
         title="Exercícios de análise"
       />
 
