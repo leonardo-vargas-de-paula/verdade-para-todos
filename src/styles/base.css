@@ -84,21 +84,6 @@ img {
   display: block;
 }
 
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 0;
-  background: var(--color-accent);
-  color: #fff;
-  padding: 14px 20px;
-  z-index: 100;
-  border-radius: 0 0 10px 0;
-  font-weight: 700;
-}
-.skip-link:focus {
-  left: 0;
-}
-
 /* -------------------------------------------------------------------------
    LAYOUT GERAL
    ------------------------------------------------------------------------- */
