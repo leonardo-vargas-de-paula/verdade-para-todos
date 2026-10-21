@@ -31,7 +31,7 @@ const EXERCICIOS = [
     enunciado:
       "Quais características indicam que uma notícia pode ser verdadeira?",
     alternativas: [
-      "Se a manchete possuir muitas publicações no instagram então ela pode ser verdadeira",
+      "Se a manchete possuir muitas publicações no Instagram então ela pode ser verdadeira",
       "Se alguém muito importante te enviou ela só pode ser verdadeira",
       "Possui fonte e a mesma informação pode ser encontrada e confirmada em diferentes portais e sites",
       "A notícia fala exatamente o que você estava procurando, então a informação te encontrou",
@@ -42,7 +42,7 @@ const EXERCICIOS = [
   },
   {
     enunciado:
-      "Você acaba de encontrar uma receita caseira para curar artrite à venda com muitas curtidas nas redes sociais, o que você pode fazer?",
+      "Você acaba de encontrar uma receita caseira para curar artrite, anunciada com muitas curtidas nas redes sociais, o que você pode fazer?",
     alternativas: [
       "Faço a receita imediatamente",
       "Mostro para meus amigos para eles aprenderem também",
@@ -56,7 +56,7 @@ const EXERCICIOS = [
   {
     enunciado: (
       <>
-        Responda a questão de verdadeiro ou falso baseado no seguinte cenário
+        Responda à questão de verdadeiro ou falso baseado no seguinte cenário
         fictício:
         <br />
         <br />
@@ -72,7 +72,7 @@ const EXERCICIOS = [
   {
     enunciado: (
       <>
-        Responda a questão de verdadeiro ou falso baseado no seguinte cenário
+        Responda à questão de verdadeiro ou falso baseado no seguinte cenário
         fictício:
         <br />
         <br />

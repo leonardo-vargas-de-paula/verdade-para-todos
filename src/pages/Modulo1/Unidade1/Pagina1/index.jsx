@@ -28,24 +28,24 @@ function Pagina1() {
 
       <SectionCard title="Definição">
         <p>
-          <strong>Fake news </strong>é uma expressão em inglês que quer dizer{" "}
+          <strong>Fake News </strong>é uma expressão em inglês que quer dizer{" "}
           <strong>"notícia falsa"</strong>. É uma informação inventada ou
           deturpada, criada para parecer uma informação verdadeira e enganar.
         </p>
         <p>
           Pesquisadores da área apontam que o termo mais adequado seria{" "}
-          <strong>desinformação</strong>, por considerar <strong>Fake news </strong> uma expressão
-          insuficiente para descrever o fenômeno. Nesse curso usaremos o termo
+          <strong>desinformação</strong>, por considerar <strong>Fake News </strong>{" "}
+          uma expressão insuficiente para descrever o fenômeno. Nesse curso usaremos o termo
           <strong> Fake News</strong>, mas vamos explicar posteriormente o que é desinformação e como ela se relaciona com as notícias falsas.
         </p>
       </SectionCard>
 
-      <SectionCard title="Por que as fake news existem">
+      <SectionCard title="Por que as Fake News existem">
         <IconList
           items={[
             {
               title: "Ganhar dinheiro",
-              text: "Manchetes chamativas atraem muitos cliques, podendo gerar lucro para quem publicou. Além disso, golpes são realizados através de informaçẽos falsas.",
+              text: "Manchetes chamativas atraem muitos cliques, podendo gerar lucro para quem publicou. Além disso, golpes são realizados por meio de informações falsas.",
             },
             {
               title: "Influenciar a opinião das pessoas",
@@ -53,7 +53,7 @@ function Pagina1() {
             },
             {
               title: "Causar confusão ou desestabilização social",
-              text: "Um boato pode ser construido para gerar revolta e promover a polarização social",
+              text: "Um boato pode ser construído para gerar revolta e promover a polarização social.",
             },
           ]}
         />

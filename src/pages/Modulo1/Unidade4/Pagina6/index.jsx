@@ -32,7 +32,7 @@ function Pagina6() {
           items={[
             {
               title: "O que é leitura lateral",
-              text: "A leitural lateral é uma técnica de checagem que consiste em abrir novas abas para buscar informações sobre a fonte e o assunto antes de acreditar ou compartilhar uma informação.",
+              text: "A leitura lateral é uma técnica de checagem que consiste em abrir novas abas para buscar informações sobre a fonte e o assunto antes de acreditar ou compartilhar uma informação.",
             },
             {
               title: "O que é uma 'aba'",

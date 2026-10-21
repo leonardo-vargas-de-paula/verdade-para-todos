@@ -22,7 +22,7 @@ function Pagina1() {
           items={[
             {
               title: "Imita uma informação verdadeira",
-              text: "Fake news tentam copiar caracteristicas de uma noticia ou uma informação verdadeira, inclusive podendo misturar elementos da realidade mas de forma distorcida.",
+              text: "Fake News tentam copiar características de uma notícia ou de uma informação verdadeira, inclusive podendo misturar elementos da realidade, mas de forma distorcida.",
             },
             {
               title: "Apelo emocional",

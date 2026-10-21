@@ -22,7 +22,8 @@ function BoasVindas() {
           o combate à desinformação por meio de um curso online.
         </p>
         <p>
-          As aulas estão organizadas em unidades, com modulos de conteúdo teórico e exercícios.
+          As aulas estão organizadas em unidades, com módulos de conteúdo
+          teórico e exercícios.
         </p>
         <Link className="btn-start" to="/modulos">
           Começar o curso ▸
