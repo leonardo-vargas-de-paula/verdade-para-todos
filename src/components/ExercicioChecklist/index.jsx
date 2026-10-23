@@ -13,7 +13,9 @@ const LETTERS = ["A", "B", "C", "D", "E", "F"];
    Diferente do Exercicio (múltipla escolha, uma resposta certa), aqui pode
    haver mais de uma alternativa correta: o usuário marca quantas quiser e
    confirma. O feedback tem três estados — acertou tudo, acertou em parte,
-   errou tudo — sempre com ícone + texto além da cor. */
+   errou tudo — sempre com ícone + texto além da cor.
+   `resultadoInicial` restaura o que já foi marcado/confirmado ao voltar;
+   `aoAlterar` guarda as marcações antes mesmo da confirmação. */
 function ExercicioChecklist({
   enunciado,
   noticia,
@@ -21,13 +23,21 @@ function ExercicioChecklist({
   alternativas,
   corretas = [],
   explicacao,
+  resultadoInicial,
   aoResponder,
+  aoAlterar,
   onVoltar,
   onProximo,
   ultimo,
 }) {
-  const [marcadas, setMarcadas] = useState([]);
-  const [confirmado, setConfirmado] = useState(false);
+  const selecionadasIniciais = Array.isArray(resultadoInicial?.selecionadas)
+    ? resultadoInicial.selecionadas
+    : [];
+  const [marcadas, setMarcadas] = useState(selecionadasIniciais);
+  const [confirmado, setConfirmado] = useState(
+    resultadoInicial?.confirmado === true &&
+      Array.isArray(resultadoInicial?.selecionadas)
+  );
 
   const corretasSet = new Set(corretas);
   const total = corretas.length;
@@ -38,11 +48,11 @@ function ExercicioChecklist({
 
   const alternar = (index) => {
     if (confirmado) return;
-    setMarcadas((anteriores) =>
-      anteriores.includes(index)
-        ? anteriores.filter((i) => i !== index)
-        : [...anteriores, index]
-    );
+    const proximas = marcadas.includes(index)
+      ? marcadas.filter((i) => i !== index)
+      : [...marcadas, index];
+    setMarcadas(proximas);
+    aoAlterar?.(proximas);
   };
 
   const confirmar = () => {
@@ -53,6 +63,8 @@ function ExercicioChecklist({
       acertos: acertosMarcados,
       total,
       exato: acertosMarcados === total && marcadas.length === total,
+      selecionadas: marcadas,
+      confirmado: true,
     });
   };
 
