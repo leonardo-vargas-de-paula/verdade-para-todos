@@ -31,7 +31,7 @@ const EXERCICIO = {
       "Segundo especialista em segurança Dr. Carlos Silva, da Universidade Federal de Mato Grosso do Oeste, anotar a senha do banco em um papel e guardar na carteira junto com o cartão é um dos maiores erros da atualidade. Se você perder a bolsa, o criminoso terá o cartão e a chave para esvaziar sua conta em minutos.\n\nSaiba mais sobre em sua publicação no portal de notícias universitário: www.portal.ficticio.com",
   },
   alternativas: [
-    "Ainda que um especialista e uma universidade foram mencionados, não podemos acreditar em tudo cegamente a primeira vista.",
+    "Ainda que um especialista e uma universidade foram mencionados, não podemos acreditar em tudo cegamente à primeira vista.",
     "É uma boa prática usar a leitura lateral para analisar a confiabilidade do autor e da instituição citada antes de compartilhar a informação.",
     "Citar o autor facilita a descoberta de suas qualificações e credenciais para um assunto.",
     "Buscar informações sobre o endereço www.portal.ficticio.com pode me ajudar a confirmar se o portal citado é competente.",

@@ -38,11 +38,11 @@ function Pagina1() {
             },
             {
               title: "Informação incorreta",
-              text: "Informação que está errada mas que foi divulgada sem a intenção de enganar.",
+              text: "Informação que está errada, mas que foi divulgada sem a intenção de enganar.",
             },
             {
               title: "Má-informação",
-              text: "Uma informação que é verdadeira mas que foi divulgada de forma indevida para causar danos.",
+              text: "Uma informação que é verdadeira, mas que foi divulgada de forma indevida para causar danos.",
             },
           ]}
         />

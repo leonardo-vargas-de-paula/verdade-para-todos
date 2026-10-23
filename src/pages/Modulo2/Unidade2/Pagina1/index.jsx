@@ -61,7 +61,7 @@ function Pagina1() {
 
       <UnitNav
         prev={{
-          to: "/modulo/2/unidade/1",
+          to: "/modulo/2/unidade/1/2",
           label: "◂ Unidade anterior",
           title: "Exercícios básicos",
         }}

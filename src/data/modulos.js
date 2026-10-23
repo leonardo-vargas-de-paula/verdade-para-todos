@@ -37,7 +37,7 @@ export const UNIDADES_MODULO2 = [
     number: "1",
     title: "Unidade 1 — Exercícios básicos",
     to: "/modulo/2/unidade/1",
-    paginas: ["/modulo/2/unidade/1"],
+    paginas: ["/modulo/2/unidade/1", "/modulo/2/unidade/1/2"],
   },
   {
     number: "2",
