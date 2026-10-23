@@ -93,10 +93,16 @@ function Pagina1() {
   useDocumentTitle("Módulo 2 · Unidade 1 — Exercícios básicos");
 
   const [indice, setIndice] = useState(0);
-  const [resultados, setResultados] = useState([]);
+  /* Guarda, por pergunta, o índice da alternativa escolhida — assim o
+     feedback permanece ao voltar para uma pergunta já respondida. */
+  const [respostas, setRespostas] = useState([]);
   const [finalizado, setFinalizado] = useState(false);
   const concluido = finalizado;
-  const acertos = resultados.filter(Boolean).length;
+  const acertos = respostas.reduce(
+    (total, resposta, i) =>
+      resposta === EXERCICIOS[i]?.correta ? total + 1 : total,
+    0
+  );
   /* `finalizado` cobre o render imediato; a persistência vem em seguida. */
   const unidadeCompleta = finalizado || unidadeConcluida(ROTA_UNIDADE);
 
@@ -105,8 +111,16 @@ function Pagina1() {
     if (finalizado) marcarUnidadeConcluida(ROTA_UNIDADE);
   }, [finalizado]);
 
-  const handleResponder = (acertou) => {
-    setResultados((anteriores) => [...anteriores, acertou]);
+  const handleResponder = (_acertou, alternativaEscolhida) => {
+    setRespostas((anteriores) => {
+      const proximas = [...anteriores];
+      proximas[indice] = alternativaEscolhida;
+      return proximas;
+    });
+  };
+
+  const handleVoltar = () => {
+    setIndice((i) => Math.max(0, i - 1));
   };
 
   const handleProximo = () => {
@@ -161,7 +175,9 @@ function Pagina1() {
           alternativas={EXERCICIOS[indice].alternativas}
           corretaIndex={EXERCICIOS[indice].correta}
           explicacao={EXERCICIOS[indice].explicacao}
+          respostaInicial={respostas[indice] ?? null}
           aoResponder={handleResponder}
+          onVoltar={indice > 0 ? handleVoltar : undefined}
           onProximo={handleProximo}
           ultimo={indice === EXERCICIOS.length - 1}
         />

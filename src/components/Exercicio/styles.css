@@ -79,9 +79,6 @@
   cursor: default;
 }
 
-.exercise-actions {
-  margin-top: var(--tap-gap);
-}
 .btn-next {
   display: inline-flex;
   align-items: center;
