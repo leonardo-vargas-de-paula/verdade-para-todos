@@ -1,0 +1,61 @@
+/* Ações do exercício — voltar à esquerda, confirmar/avançar à direita. */
+.exercise-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tap-gap);
+  margin-top: var(--tap-gap);
+}
+
+.exercise-actions-left,
+.exercise-actions-right {
+  display: flex;
+  align-items: center;
+}
+
+.exercise-actions-right {
+  margin-left: auto;
+}
+
+.btn-voltar-exercicio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: var(--tap-min);
+  padding: 0 22px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  cursor: pointer;
+}
+.btn-voltar-exercicio:hover {
+  background: var(--color-bg-alt);
+}
+.btn-voltar-exercicio svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 640px) {
+  .exercise-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .exercise-actions-left,
+  .exercise-actions-right {
+    display: flex;
+  }
+  .exercise-actions-right {
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+  .btn-voltar-exercicio {
+    width: 100%;
+  }
+}

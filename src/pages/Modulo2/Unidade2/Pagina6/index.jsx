@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../../../components/Layout";
 import BackBar from "../../../../components/BackBar";
 import Hero from "../../../../components/Hero";
@@ -8,7 +9,9 @@ import UnitNav from "../../../../components/UnitNav";
 import useDocumentTitle from "../../../../utils/useDocumentTitle";
 import { marcarUnidadeConcluida } from "../../../../utils/progresso";
 import {
+  lerResultado,
   lerResultados,
+  registrarRascunho,
   registrarResultado,
 } from "../../../../utils/resultadosExercicios";
 
@@ -40,6 +43,8 @@ const EXERCICIO = {
 
 function Pagina6() {
   useDocumentTitle("Módulo 2 · Unidade 2 — Exercício 5 de 5");
+  const navigate = useNavigate();
+  const resultadoSalvo = lerResultado(CHAVE_RESULTADOS, 4);
 
   const [finalizado, setFinalizado] = useState(false);
   const exatos = finalizado
@@ -99,9 +104,14 @@ function Pagina6() {
           alternativas={EXERCICIO.alternativas}
           corretas={EXERCICIO.corretas}
           explicacao={EXERCICIO.explicacao}
+          resultadoInicial={resultadoSalvo}
+          aoAlterar={(selecionadas) =>
+            registrarRascunho(CHAVE_RESULTADOS, 4, selecionadas)
+          }
           aoResponder={(resultado) =>
             registrarResultado(CHAVE_RESULTADOS, 4, resultado)
           }
+          onVoltar={() => navigate("/modulo/2/unidade/2/5")}
           onProximo={() => setFinalizado(true)}
           ultimo
         />

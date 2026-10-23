@@ -139,9 +139,6 @@
   cursor: default;
 }
 
-.exercicio-checklist .exercise-actions {
-  margin-top: var(--tap-gap);
-}
 .exercicio-checklist .btn-next {
   display: inline-flex;
   align-items: center;

@@ -4,7 +4,11 @@ import BackBar from "../../../../components/BackBar";
 import Hero from "../../../../components/Hero";
 import ExercicioChecklist from "../../../../components/ExercicioChecklist";
 import useDocumentTitle from "../../../../utils/useDocumentTitle";
-import { registrarResultado } from "../../../../utils/resultadosExercicios";
+import {
+  lerResultado,
+  registrarRascunho,
+  registrarResultado,
+} from "../../../../utils/resultadosExercicios";
 
 /* Exercícios de análise — Módulo 2, Unidade 2, Exercício 1 de 5.
    Formato "checklist": pode haver mais de uma alternativa correta. */
@@ -33,6 +37,7 @@ const EXERCICIO = {
 function Pagina2() {
   useDocumentTitle("Módulo 2 · Unidade 2 — Exercício 1 de 5");
   const navigate = useNavigate();
+  const resultadoSalvo = lerResultado(CHAVE_RESULTADOS, 0);
 
   const handleProximo = () => {
     navigate("/modulo/2/unidade/2/3");
@@ -52,6 +57,10 @@ function Pagina2() {
         alternativas={EXERCICIO.alternativas}
         corretas={EXERCICIO.corretas}
         explicacao={EXERCICIO.explicacao}
+        resultadoInicial={resultadoSalvo}
+        aoAlterar={(selecionadas) =>
+          registrarRascunho(CHAVE_RESULTADOS, 0, selecionadas)
+        }
         aoResponder={(resultado) =>
           registrarResultado(CHAVE_RESULTADOS, 0, resultado)
         }

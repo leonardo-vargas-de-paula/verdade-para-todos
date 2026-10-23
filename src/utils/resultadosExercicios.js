@@ -23,6 +23,29 @@ export function registrarResultado(chave, indice, resultado) {
   }
 }
 
+/* Salva as alternativas marcadas antes da confirmação, para que o exercício
+   continue igual ao voltar. Um resultado já confirmado não é sobrescrito. */
+export function registrarRascunho(chave, indice, selecionadas) {
+  const resultados = lerBruto(chave);
+  if (resultados[indice]?.confirmado) return;
+
+  resultados[indice] = {
+    ...(resultados[indice] ?? {}),
+    selecionadas,
+    confirmado: false,
+  };
+
+  try {
+    window.sessionStorage.setItem(chave, JSON.stringify(resultados));
+  } catch {
+    /* armazenamento indisponível — o rascunho apenas não é mantido */
+  }
+}
+
+export function lerResultado(chave, indice) {
+  return lerBruto(chave)[indice] ?? null;
+}
+
 export function lerResultados(chave) {
   return lerBruto(chave);
 }
