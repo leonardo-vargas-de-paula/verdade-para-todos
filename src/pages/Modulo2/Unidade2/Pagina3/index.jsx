@@ -55,6 +55,7 @@ function Pagina3() {
         aoResponder={(resultado) =>
           registrarResultado(CHAVE_RESULTADOS, 1, resultado)
         }
+        onVoltar={() => navigate("/modulo/2/unidade/2/2")}
         onProximo={handleProximo}
         ultimo={false}
       />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SectionCard from "../SectionCard";
 import Callout from "../Callout";
+import ExercicioAcoes from "../ExercicioAcoes";
 import "./styles.css";
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -8,24 +9,29 @@ const LETTERS = ["A", "B", "C", "D"];
 /* Exercício de múltipla escolha (2 ou mais alternativas).
    Uma pergunta por vez; após responder, mostra feedback
    (cor + ícone + texto) e o botão para avançar.
-   `explicacao` (opcional) é um texto extra mostrado no feedback. */
+   `explicacao` (opcional) é um texto extra mostrado no feedback.
+   `respostaInicial` mantém a alternativa escolhida ao voltar para uma pergunta;
+   `onVoltar` (opcional) exibe o botão de voltar quando há exercício anterior. */
 function Exercicio({
   enunciado,
   alternativas,
   corretaIndex,
   explicacao,
+  respostaInicial = null,
   aoResponder,
+  onVoltar,
   onProximo,
   ultimo,
 }) {
-  const [selecionada, setSelecionada] = useState(null);
+  const [selecionada, setSelecionada] = useState(respostaInicial);
   const respondida = selecionada !== null;
   const acertou = selecionada === corretaIndex;
+  const mostrarAcoes = respondida || Boolean(onVoltar);
 
   const handleEscolher = (index) => {
     if (respondida) return;
     setSelecionada(index);
-    aoResponder?.(index === corretaIndex);
+    aoResponder?.(index === corretaIndex, index);
   };
 
   return (
@@ -72,12 +78,14 @@ function Exercicio({
         <p className="exercise-explicacao">{explicacao}</p>
       )}
 
-      {respondida && (
-        <div className="exercise-actions">
-          <button type="button" className="btn-next" onClick={onProximo}>
-            {ultimo ? "Finalizar exercícios ▸" : "Próximo exercício ▸"}
-          </button>
-        </div>
+      {mostrarAcoes && (
+        <ExercicioAcoes onVoltar={onVoltar}>
+          {respondida && (
+            <button type="button" className="btn-next" onClick={onProximo}>
+              {ultimo ? "Finalizar exercícios ▸" : "Próximo exercício ▸"}
+            </button>
+          )}
+        </ExercicioAcoes>
       )}
     </>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../../../components/Layout";
 import BackBar from "../../../../components/BackBar";
 import Hero from "../../../../components/Hero";
@@ -40,6 +41,7 @@ const EXERCICIO = {
 
 function Pagina6() {
   useDocumentTitle("Módulo 2 · Unidade 2 — Exercício 5 de 5");
+  const navigate = useNavigate();
 
   const [finalizado, setFinalizado] = useState(false);
   const exatos = finalizado
@@ -102,6 +104,7 @@ function Pagina6() {
           aoResponder={(resultado) =>
             registrarResultado(CHAVE_RESULTADOS, 4, resultado)
           }
+          onVoltar={() => navigate("/modulo/2/unidade/2/5")}
           onProximo={() => setFinalizado(true)}
           ultimo
         />

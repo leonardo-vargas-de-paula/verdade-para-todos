@@ -3,6 +3,7 @@ import SectionCard from "../SectionCard";
 import Callout from "../Callout";
 import TelaNavegador from "../TelaNavegador";
 import PostagemRedeSocial from "../PostagemRedeSocial";
+import ExercicioAcoes from "../ExercicioAcoes";
 import { CheckIcon } from "../icons";
 import "./styles.css";
 
@@ -21,6 +22,7 @@ function ExercicioChecklist({
   corretas = [],
   explicacao,
   aoResponder,
+  onVoltar,
   onProximo,
   ultimo,
 }) {
@@ -155,7 +157,7 @@ function ExercicioChecklist({
         <p className="exercise-explicacao">{explicacao}</p>
       )}
 
-      <div className="exercise-actions">
+      <ExercicioAcoes onVoltar={onVoltar}>
         {confirmado ? (
           <button type="button" className="btn-next" onClick={onProximo}>
             {ultimo ? "Finalizar exercícios ▸" : "Próximo exercício ▸"}
@@ -170,7 +172,7 @@ function ExercicioChecklist({
             Confirmar resposta
           </button>
         )}
-      </div>
+      </ExercicioAcoes>
     </div>
   );
 }
