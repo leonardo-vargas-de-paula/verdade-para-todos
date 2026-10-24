@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ChevronRightIcon, CheckIcon, LockIcon } from "../icons";
 import ConfirmDialog from "../ConfirmDialog";
 import "./styles.css";
@@ -7,7 +7,7 @@ import "./styles.css";
 /* Cartão de unidade/módulo — lista vertical simples.
    concluida = true mostra o selo de verificado (tudo visitado).
    bloqueada = true deixa o cartão travado (precisa terminar o anterior);
-   o clique abre um diálogo com atalho para o conteúdo pendente.
+   o clique abre um aviso com um único botão "Voltar".
    tipo="unidade" (padrão) ou "modulo" só muda o texto dos avisos. */
 function UnitCard({
   number,
@@ -15,11 +15,9 @@ function UnitCard({
   to,
   concluida = false,
   bloqueada = false,
-  anteriorTo,
   anteriorTitulo,
   tipo = "unidade",
 }) {
-  const navigate = useNavigate();
   const [dialogoAberto, setDialogoAberto] = useState(false);
 
   const textos =
@@ -30,7 +28,6 @@ function UnitCard({
           dialogoMensagem: anteriorTitulo
             ? `Termine o módulo "${anteriorTitulo}" para continuar.`
             : "Termine o módulo anterior para continuar.",
-          dialogoConfirmar: "Ir para o módulo anterior",
         }
       : {
           hint: "Termine a unidade anterior para liberar",
@@ -38,7 +35,6 @@ function UnitCard({
           dialogoMensagem: anteriorTitulo
             ? `Termine a unidade "${anteriorTitulo}" para continuar.`
             : "Termine a unidade anterior para continuar.",
-          dialogoConfirmar: "Ir para a unidade anterior",
         };
 
   const conteudo = (
@@ -73,12 +69,7 @@ function UnitCard({
           open={dialogoAberto}
           title={textos.dialogoTitulo}
           message={textos.dialogoMensagem}
-          confirmLabel={textos.dialogoConfirmar}
-          cancelLabel="Continuar aqui"
-          onConfirm={() => {
-            setDialogoAberto(false);
-            if (anteriorTo) navigate(anteriorTo);
-          }}
+          cancelLabel="Voltar"
           onCancel={() => setDialogoAberto(false)}
         />
       </li>

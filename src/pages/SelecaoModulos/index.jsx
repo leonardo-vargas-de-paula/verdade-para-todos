@@ -39,7 +39,6 @@ function SelecaoModulos() {
           tipo="modulo"
           concluida={modulo2Lido}
           bloqueada={!modulo1Lido}
-          anteriorTo="/modulo/1"
           anteriorTitulo="Módulo 1 — Fake News: Aspectos Básicos"
         />
         <UnitCard
@@ -49,7 +48,6 @@ function SelecaoModulos() {
           tipo="modulo"
           concluida={modulo3Lido}
           bloqueada={!modulo2Lido}
-          anteriorTo="/modulo/2"
           anteriorTitulo="Módulo 2 — Exercícios"
         />
       </ul>
