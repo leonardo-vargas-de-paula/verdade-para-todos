@@ -3,7 +3,9 @@ import "./styles.css";
 
 /* Diálogo de confirmação acessível — usado, por exemplo, quando o
    usuário clica na marca do header para voltar às boas-vindas.
-   Abre com foco no "Não" (ação segura), ESC e clique fora cancelam. */
+   Abre com foco no "Não" (ação segura), ESC e clique fora cancelam.
+   Sem `onConfirm`, mostra apenas o botão de cancelar (ex.: aviso de
+   conteúdo trancado, em que a única saída é "Voltar"). */
 function ConfirmDialog({
   open,
   title,
@@ -68,13 +70,15 @@ function ConfirmDialog({
         <h2 id="confirm-dialog-title">{title}</h2>
         {message && <p>{message}</p>}
         <div className="dialog-actions">
-          <button
-            type="button"
-            className="dialog-btn confirm"
-            onClick={onConfirm}
-          >
-            {confirmLabel}
-          </button>
+          {onConfirm && (
+            <button
+              type="button"
+              className="dialog-btn confirm"
+              onClick={onConfirm}
+            >
+              {confirmLabel}
+            </button>
+          )}
           <button
             type="button"
             className="dialog-btn cancel"
