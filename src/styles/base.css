@@ -128,6 +128,36 @@ html {
 }
 
 /* -------------------------------------------------------------------------
+   BOTÕES PADRONIZADOS — teoria (UnitNav) e exercícios (ExercicioAcoes)
+   Mesmo gabarito de caixa: os botões de voltar/avançar têm a mesma altura e
+   dividem a linha em metades iguais. Cada componente cuida só do alinhamento.
+   ------------------------------------------------------------------------- */
+.unit-nav a,
+.unit-nav button,
+.btn-voltar-exercicio,
+.btn-next {
+  flex: 1 1 260px;
+  min-height: var(--btn-min);
+  padding: 18px 24px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+}
+.unit-nav a:hover,
+.unit-nav button:hover,
+.btn-voltar-exercicio:hover,
+.btn-next:hover:not(.locked) {
+  border-color: var(--color-accent);
+}
+
+/* -------------------------------------------------------------------------
    RESPONSIVO — telas de celular também usadas por idosos
    ------------------------------------------------------------------------- */
 @media (max-width: 640px) {

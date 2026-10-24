@@ -1,3 +1,5 @@
+/* Caixa, borda e tipografia vêm de src/styles/base.css (botões padronizados).
+   Aqui ficam só o layout da navegação e a hierarquia rótulo + título. */
 .unit-nav {
   display: flex;
   gap: var(--tap-gap);
@@ -6,24 +8,14 @@
 }
 .unit-nav a,
 .unit-nav button {
-  flex: 1 1 260px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-height: var(--tap-min);
   justify-content: center;
-  padding: 18px 24px;
-  border-radius: var(--radius);
-  text-decoration: none;
-  border: 3px solid var(--color-border);
-  background: #fff;
-  font: inherit;
-  color: inherit;
   text-align: inherit;
-  cursor: pointer;
 }
 .unit-nav a:visited {
-  color: inherit;
+  color: var(--color-primary-dark);
 }
 .unit-nav a .label,
 .unit-nav button .label {
@@ -42,13 +34,26 @@
 .unit-nav button.next {
   text-align: right;
   align-items: flex-end;
-  border-color: var(--color-primary);
 }
 .unit-nav a.prev {
   text-align: left;
   align-items: flex-start;
 }
-.unit-nav a:hover,
-.unit-nav button:hover {
-  border-color: var(--color-accent);
+
+@media (max-width: 640px) {
+  .unit-nav {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .unit-nav a,
+  .unit-nav button {
+    flex: none;
+    width: 100%;
+  }
+  /* Avançar em cima. Muda só a ordem visual: o DOM e o Tab seguem
+     voltar → avançar, que é a leitura lógica (ver comentário em
+     ExercicioAcoes/styles.css). */
+  .unit-nav .next {
+    order: -1;
+  }
 }
