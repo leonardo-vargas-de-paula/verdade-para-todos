@@ -4,7 +4,7 @@ import Callout from "../Callout";
 import TelaNavegador from "../TelaNavegador";
 import PostagemRedeSocial from "../PostagemRedeSocial";
 import ExercicioAcoes from "../ExercicioAcoes";
-import { CheckIcon } from "../icons";
+import { CheckIcon, LockIcon } from "../icons";
 import "./styles.css";
 
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
@@ -38,6 +38,8 @@ function ExercicioChecklist({
     resultadoInicial?.confirmado === true &&
       Array.isArray(resultadoInicial?.selecionadas)
   );
+  const [avisoSemMarcacao, setAvisoSemMarcacao] = useState(false);
+  const semMarcacao = marcadas.length === 0;
 
   const corretasSet = new Set(corretas);
   const total = corretas.length;
@@ -48,6 +50,7 @@ function ExercicioChecklist({
 
   const alternar = (index) => {
     if (confirmado) return;
+    setAvisoSemMarcacao(false);
     const proximas = marcadas.includes(index)
       ? marcadas.filter((i) => i !== index)
       : [...marcadas, index];
@@ -56,7 +59,12 @@ function ExercicioChecklist({
   };
 
   const confirmar = () => {
-    if (confirmado || marcadas.length === 0) return;
+    if (confirmado) return;
+    if (marcadas.length === 0) {
+      setAvisoSemMarcacao(true);
+      return;
+    }
+    setAvisoSemMarcacao(false);
     const acertosMarcados = marcadas.filter((i) => corretasSet.has(i)).length;
     setConfirmado(true);
     aoResponder?.({
@@ -177,11 +185,25 @@ function ExercicioChecklist({
         ) : (
           <button
             type="button"
-            className="btn-next"
+            className={semMarcacao ? "btn-next locked" : "btn-next"}
             onClick={confirmar}
-            disabled={marcadas.length === 0}
+            onBlur={() => setAvisoSemMarcacao(false)}
+            aria-disabled={semMarcacao}
+            aria-describedby={semMarcacao ? "checklist-next-tip" : undefined}
           >
-            Confirmar resposta
+            {semMarcacao && <LockIcon className="btn-next-lock" />}
+            <span>Confirmar resposta</span>
+            {semMarcacao && (
+              <span
+                id="checklist-next-tip"
+                className={
+                  avisoSemMarcacao ? "btn-next-tip visible" : "btn-next-tip"
+                }
+                role="tooltip"
+              >
+                Marque pelo menos uma alternativa
+              </span>
+            )}
           </button>
         )}
       </ExercicioAcoes>

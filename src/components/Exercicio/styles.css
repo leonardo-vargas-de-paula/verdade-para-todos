@@ -7,6 +7,7 @@
    com o mesmo tamanho (padding/margem) do Callout */
 .exercise-explicacao {
   margin-top: 18px;
+  max-width: none;
   padding: 20px 22px;
   background: var(--color-bg-alt);
   border: 3px solid var(--color-border);
@@ -79,21 +80,4 @@
   cursor: default;
 }
 
-.btn-next {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--tap-min);
-  padding: 0 26px;
-  background: #fff;
-  border: 3px solid var(--color-primary);
-  border-radius: var(--radius);
-  color: var(--color-primary-dark);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--fs-base);
-  cursor: pointer;
-}
-.btn-next:hover {
-  background: var(--color-bg-alt);
-}
+

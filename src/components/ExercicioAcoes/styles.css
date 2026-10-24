@@ -58,4 +58,74 @@
   .btn-voltar-exercicio {
     width: 100%;
   }
+  .btn-next {
+    width: 100%;
+  }
+}
+
+/* Botão de avançar/confirmar — estilo compartilhado pelos exercícios
+   básicos (Exercicio) e de análise (ExercicioChecklist). */
+.btn-next {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: 0 26px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  cursor: pointer;
+}
+.btn-next:hover:not(.locked) {
+  background: var(--color-bg-alt);
+}
+
+/* avançar ainda bloqueado — mesmo padrão visual dos módulos trancados */
+.btn-next.locked {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+.btn-next.locked:hover {
+  background: #fff;
+}
+.btn-next-lock {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* tooltip explicando por que o avanço está travado */
+.btn-next-tip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  width: max-content;
+  max-width: min(280px, 80vw);
+  background: var(--color-primary-dark);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: max(12pt, var(--fs-sm));
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: normal;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.btn-next.locked:hover .btn-next-tip,
+.btn-next.locked:focus-visible .btn-next-tip,
+.btn-next-tip.visible {
+  opacity: 1;
+  visibility: visible;
 }

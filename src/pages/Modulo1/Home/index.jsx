@@ -51,7 +51,6 @@ function ModuleHome() {
               to={unidade.to}
               concluida={concluida}
               bloqueada={bloqueada}
-              anteriorTo={primeiraIncompleta?.to}
               anteriorTitulo={primeiraIncompleta?.title}
             />
           );

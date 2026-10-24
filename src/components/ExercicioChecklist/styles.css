@@ -139,33 +139,10 @@
   cursor: default;
 }
 
-.exercicio-checklist .btn-next {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--tap-min);
-  padding: 0 26px;
-  background: #fff;
-  border: 3px solid var(--color-primary);
-  border-radius: var(--radius);
-  color: var(--color-primary-dark);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--fs-base);
-  cursor: pointer;
-}
-.exercicio-checklist .btn-next:hover:not(:disabled) {
-  background: var(--color-bg-alt);
-}
-.exercicio-checklist .btn-next:disabled {
-  border-color: var(--color-border);
-  color: var(--color-text-muted);
-  cursor: not-allowed;
-}
-
 /* explicação abaixo do feedback, no mesmo tom do componente Exercicio */
 .exercicio-checklist .exercise-explicacao {
   margin-top: 18px;
+  max-width: none;
   padding: 20px 22px;
   background: var(--color-bg-alt);
   border: 3px solid var(--color-border);
