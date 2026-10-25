@@ -18,8 +18,9 @@
   text-decoration: none;
   color: var(--color-text);
   box-shadow: var(--shadow);
-  transition: border-color 0.15s ease, transform 0.15s ease;
   min-height: 96px;
+  transition: border-color 0.15s ease, transform 0.15s ease,
+    background-color 0.12s ease;
 }
 .unit-card:visited {
   color: var(--color-text);
@@ -27,6 +28,10 @@
 .unit-card:hover {
   border-color: var(--color-accent);
   transform: translateX(4px);
+}
+.unit-card:active {
+  background: var(--color-accent-tint);
+  border-color: var(--color-accent-dark);
 }
 .unit-card .unit-number {
   position: relative;
@@ -97,6 +102,9 @@
 .unit-card.locked:hover {
   border-color: var(--color-border);
   transform: none;
+}
+.unit-card.locked:active {
+  background: var(--color-bg-pressed);
 }
 
 @media (max-width: 640px) {
