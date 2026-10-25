@@ -33,10 +33,14 @@
   line-height: 1.4;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.12s ease;
 }
 .exercicio-checklist .alternative:hover:not(:disabled) {
   border-color: var(--color-accent);
+}
+.exercicio-checklist .alternative:active:not(:disabled) {
+  background: var(--color-accent-tint);
+  border-color: var(--color-accent-dark);
 }
 
 .exercicio-checklist .alternative .letter {

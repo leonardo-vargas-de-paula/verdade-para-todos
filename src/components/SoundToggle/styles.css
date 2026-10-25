@@ -17,10 +17,17 @@
 .sound-toggle:hover {
   background: var(--color-bg-alt);
 }
+.sound-toggle:active {
+  background: var(--color-bg-pressed);
+}
 .sound-toggle[aria-pressed="true"] {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
+}
+.sound-toggle[aria-pressed="true"]:active {
+  background: var(--color-primary-pressed);
+  border-color: var(--color-primary-pressed);
 }
 .sound-toggle-icon {
   width: 28px;

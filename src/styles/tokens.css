@@ -17,6 +17,13 @@
   --color-accent: #b9501e; /* terracota — chamadas de ação */
   --color-accent-dark: #8f3c15;
 
+  /* estados de clique — um tom além do hover */
+  --color-primary-pressed: #052f33;
+  --color-accent-pressed: #6f2e10;
+  --color-bg-pressed: #e3d4b4; /* mais escuro que --color-bg-alt */
+  --color-primary-tint: #e2edec; /* fundo claro de botão branco pressionado */
+  --color-accent-tint: #f7e7dd;
+
   /* links — azul é reservado SOMENTE para links, nunca decoração */
   --color-link: #1758a6;
   --color-link-visited: #7a5a22; /* marrom âmbar, fácil de distinguir do azul */

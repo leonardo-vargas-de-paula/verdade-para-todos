@@ -35,6 +35,10 @@
   color: var(--color-accent);
   background: var(--color-bg-alt);
 }
+.brand:active {
+  color: var(--color-accent-dark);
+  background: var(--color-bg-pressed);
+}
 .brand-icon {
   width: 44px;
   height: 44px;
@@ -81,6 +85,10 @@
 }
 .header-manual:hover {
   background: var(--color-accent-dark);
+}
+.header-manual:active {
+  background: var(--color-accent-pressed);
+  border-color: var(--color-accent-pressed);
 }
 .header-manual-icon {
   width: 28px;
