@@ -17,8 +17,8 @@ function ExercicioAcoes({ onVoltar, children }) {
   return (
     <>
       <div className="exercise-actions">
-        <div className="exercise-actions-left">
-          {onVoltar && (
+        {onVoltar && (
+          <div className="exercise-actions-left">
             <button
               type="button"
               className="btn-voltar-exercicio"
@@ -27,8 +27,8 @@ function ExercicioAcoes({ onVoltar, children }) {
               <ChevronLeftIcon />
               Voltar
             </button>
-          )}
-        </div>
+          </div>
+        )}
         <div className="exercise-actions-right">{children}</div>
       </div>
 

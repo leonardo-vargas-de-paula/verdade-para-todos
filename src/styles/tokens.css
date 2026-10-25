@@ -45,6 +45,10 @@
   --tap-min: 64px;
   --tap-gap: 44px;
 
+  /* altura padrão dos botões de navegação (teoria) e de ação (exercícios);
+     acompanha a escala de fonte para os dois continuarem do mesmo tamanho */
+  --btn-min: calc(100px * var(--user-scale));
+
   --radius: 14px;
   --shadow: 0 6px 18px rgba(34, 48, 58, 0.1);
 }

@@ -1,8 +1,9 @@
-/* Ações do exercício — voltar à esquerda, confirmar/avançar à direita. */
+/* Ações do exercício — voltar à esquerda, confirmar/avançar à direita.
+   Caixa, borda e tipografia vêm de src/styles/base.css (botões padronizados),
+   iguais aos botões da teoria: mesma altura e metade da linha para cada um. */
 .exercise-actions {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
   gap: var(--tap-gap);
   margin-top: var(--tap-gap);
 }
@@ -10,11 +11,23 @@
 .exercise-actions-left,
 .exercise-actions-right {
   display: flex;
-  align-items: center;
+  flex: 1 1 260px;
 }
 
-.exercise-actions-right {
-  margin-left: auto;
+.exercise-actions-left > .btn-voltar-exercicio,
+.exercise-actions-right > .btn-next {
+  flex: 1;
+}
+
+/* Sem "Voltar" (primeiro exercício / primeira página da análise), o avançar
+   mantém a largura de meia linha em vez de esticar pela tela toda: fica do
+   mesmo tamanho dos exercícios seguintes, alinhado à direita. No mobile a
+   regra não vale, porque lá ele ocupa a linha inteira empilhado. */
+@media (min-width: 641px) {
+  .exercise-actions-right:only-child {
+    max-width: calc(50% - var(--tap-gap) / 2);
+    margin-left: auto;
+  }
 }
 
 .btn-voltar-exercicio {
@@ -22,67 +35,20 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: var(--tap-min);
-  padding: 0 22px;
-  background: #fff;
-  border: 3px solid var(--color-primary);
-  border-radius: var(--radius);
-  color: var(--color-primary-dark);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--fs-base);
-  cursor: pointer;
-}
-.btn-voltar-exercicio:hover {
-  background: var(--color-bg-alt);
 }
 .btn-voltar-exercicio svg {
   width: 26px;
   height: 26px;
+  flex-shrink: 0;
 }
 
-@media (max-width: 640px) {
-  .exercise-actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
-  .exercise-actions-left,
-  .exercise-actions-right {
-    display: flex;
-  }
-  .exercise-actions-right {
-    justify-content: flex-end;
-    margin-left: 0;
-  }
-  .btn-voltar-exercicio {
-    width: 100%;
-  }
-  .btn-next {
-    width: 100%;
-  }
-}
-
-/* Botão de avançar/confirmar — estilo compartilhado pelos exercícios
-   básicos (Exercicio) e de análise (ExercicioChecklist). */
+/* Botão de avançar/confirmar — usado pelos exercícios básicos (Exercicio)
+   e de análise (ExercicioChecklist). */
 .btn-next {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--tap-min);
-  padding: 0 26px;
-  background: #fff;
-  border: 3px solid var(--color-primary);
-  border-radius: var(--radius);
-  color: var(--color-primary-dark);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--fs-base);
-  cursor: pointer;
-}
-.btn-next:hover:not(.locked) {
-  background: var(--color-bg-alt);
 }
 
 /* avançar ainda bloqueado — mesmo padrão visual dos módulos trancados */
@@ -92,7 +58,7 @@
   cursor: not-allowed;
 }
 .btn-next.locked:hover {
-  background: #fff;
+  border-color: var(--color-border);
 }
 .btn-next-lock {
   width: 24px;
@@ -113,6 +79,7 @@
   font-family: var(--font-body);
   font-size: max(12pt, var(--fs-sm));
   font-weight: 700;
+  line-height: 1.4;
   padding: 6px 12px;
   border-radius: 8px;
   white-space: normal;
@@ -128,4 +95,21 @@
 .btn-next-tip.visible {
   opacity: 1;
   visibility: visible;
+}
+
+@media (max-width: 640px) {
+  .exercise-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .exercise-actions-left,
+  .exercise-actions-right {
+    flex: none;
+    width: 100%;
+  }
+  /* Avançar em cima. Muda só a ordem visual: o DOM e o Tab seguem
+     voltar → avançar, que é a sequência lógica de leitura. */
+  .exercise-actions-right {
+    order: -1;
+  }
 }
