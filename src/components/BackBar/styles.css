@@ -13,12 +13,16 @@
   border-radius: var(--radius);
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
 }
 .btn-back:visited {
   color: var(--color-primary-dark);
 }
 .btn-back:hover {
   background: var(--color-bg-alt);
+}
+.btn-back:active {
+  background: var(--color-bg-pressed);
 }
 .btn-back svg {
   width: 26px;
