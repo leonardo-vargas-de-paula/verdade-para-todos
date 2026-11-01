@@ -56,20 +56,20 @@ function Pagina4() {
               content: (
                 <ul className="examples-list">
                   <li>
-                    Fato ou Fake —{" "}
+                    Aos Fatos —{" "}
                     <a
-                      href="https://g1.globo.com/fato-ou-fake/"
+                      href="https://www.aosfatos.org/"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(event) =>
                         handleLinkClick(
                           event,
-                          "https://g1.globo.com/fato-ou-fake/",
-                          "g1.globo.com/fato-ou-fake"
+                          "https://www.aosfatos.org/",
+                          "aosfatos.org"
                         )
                       }
                     >
-                      g1.globo.com/fato-ou-fake
+                      aosfatos.org
                     </a>
                   </li>
                   <li>
