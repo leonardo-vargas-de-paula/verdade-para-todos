@@ -64,7 +64,7 @@ function Pagina1() {
         next={{
           to: "/unidade/2",
           label: "Próxima unidade ▸",
-          title: "Os tipos de desinformação",
+          title: "Os tipos de informação falsa",
           ...(completa
             ? {}
             : {

@@ -10,7 +10,7 @@ export const UNIDADES_MODULO1 = [
   },
   {
     number: "2",
-    title: "Unidade 2 — Os tipos de desinformação",
+    title: "Unidade 2 — Os tipos de informação falsa",
     to: "/unidade/2",
     paginas: ["/unidade/2"],
   },
