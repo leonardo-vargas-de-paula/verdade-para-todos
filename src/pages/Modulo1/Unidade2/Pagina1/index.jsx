@@ -14,7 +14,7 @@ import {
 } from "../../../../utils/progresso";
 
 function Pagina1() {
-  useDocumentTitle("Unidade 2 — Os tipos de desinformação");
+  useDocumentTitle("Unidade 2 — Os tipos de informação falsa");
   const { pathname } = useLocation();
   const unidade = UNIDADES_MODULO1.find((u) => u.to === "/unidade/2");
   const completa = estaUnidadeCompleta(unidade.paginas, pathname);
@@ -24,7 +24,7 @@ function Pagina1() {
       <Hero
         back={<BackBar backTo="/modulo/1" backLabel="Voltar ao Módulo 1" />}
         kicker="Módulo 1 · Unidade 2 · Página 1 de 1"
-        title="Os tipos de desinformação"
+        title="Os tipos de informação falsa"
       />
 
       <SectionCard title="Nem toda informação errada é igual">
